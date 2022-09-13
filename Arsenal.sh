@@ -28,7 +28,7 @@ ${Red}
 mkdir Arsenal
 cd Arsenal
 requirements(){
-
+go_v=$(go version) &>/dev/nulls
 if ! command -v go &> /dev/null
 then
     echo "go is not installed" 
@@ -52,7 +52,6 @@ fi
 #version 
 git_v=$(git --version) &> /dev/null
 py_v=$(python3 --version) &> /dev/null
-go_v=$(go version) &>/dev/nulls
 ruby_v=$(ruby -v) &>/dev/nulls
 rust_v=$(rustc --version)
 
