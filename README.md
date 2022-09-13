@@ -42,6 +42,6 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 |eyewitness|EyeWitness is a Python tool written by @CptJesus and @christruncer. It’s goal is to help you efficiently assess what assets of your target to look into first.|
 |CRLFuzz| A fast tool to scan CRLF vulnerability written in Go|
 | DontGO403 |dontgo403 is a tool to bypass 40X errors |
-
-
-
+| Chameleon| Chameleon provides better content discovery by using wappalyzer's set of technology fingerprints alongside custom wordlists tailored to each detected technologies |
+| uncover |uncover is a go wrapper using APIs of well known search engines to quickly discover exposed hosts on the internet. It is built with automation in mind, so you can query it and utilize the results with your current pipeline tools |
+| wpscan | WordPress Security Scanner |
