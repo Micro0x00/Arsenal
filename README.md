@@ -66,3 +66,16 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
      export PATH=$PATH:/usr/local/go/bin
      export PATH=$PATH:$GOPATH/bin 
      source /etc/profile #to update you shell dont worry
+----
+## How to install
+
+    git clone https://github.com/Micro0x00/Arsenal.git
+	cd Arsenal
+	sudo chmod +x Arsenal.sh
+	sudo ./Arsenal.sh
+
+
+<h1 align="center">
+  <img src="https://i.imgur.com/mMC9NdN.png" alt="arsenal" width="700" >
+  <br>
+</h1>
