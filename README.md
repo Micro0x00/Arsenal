@@ -53,6 +53,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
  - Ruby:gem:
  - Wget:globe_with_meridians:
  - GO-Lang:poop::poop::poop:
+ - Rust
  
  ----
  ## Go-lang installation 
