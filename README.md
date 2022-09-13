@@ -1,4 +1,4 @@
-# Arsenal
+# Arsenal:rocket:
 <h1 align="center">
   <img src="https://i.imgur.com/0sx9YWQ.jpg" alt="subfinder" width="500" >
   <br>
@@ -45,3 +45,11 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | Chameleon| Chameleon provides better content discovery by using wappalyzer's set of technology fingerprints alongside custom wordlists tailored to each detected technologies |
 | uncover |uncover is a go wrapper using APIs of well known search engines to quickly discover exposed hosts on the internet. It is built with automation in mind, so you can query it and utilize the results with your current pipeline tools |
 | wpscan | WordPress Security Scanner |
+----
+## Requirements in Arsenal:heavy_check_mark:
+
+ - Python3
+ - Git
+ - Ruby
+ - Wget
+ - GO-Lang
