@@ -48,8 +48,8 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
- - Python3
- - Git
- - Ruby
- - Wget
+ - Python3:snake:
+ - Git:milky_way:
+ - Ruby:gem:
+ - Wget:globe_with_meridians:
  - GO-Lang:poop::poop::poop:
