@@ -40,4 +40,6 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | ParamSpider | Parameter miner for humans |
 |GoSpider| GoSpider - Fast web spider written in Go
 |eyewitness|EyeWitness is a Python tool written by @CptJesus and @christruncer. It’s goal is to help you efficiently assess what assets of your target to look into first.|
+|CRLFuzz| A fast tool to scan CRLF vulnerability written in Go|
+
 
