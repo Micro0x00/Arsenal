@@ -52,4 +52,4 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
  - Git
  - Ruby
  - Wget
- - GO-Lang
+ - GO-Lang:poop::poop::poop:
