@@ -36,5 +36,8 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 |Subzy |Subdomain takeover tool which works based on matching response fingerprints from can-i-take-over-xyz |
 | Xss-strike | Advanced XSS Detection Suite|
 | Altdns | Subdomain discovery through alterations and permutations |
-| Nosqlmap | 
-| ParamSpider | 
+| Nosqlmap | NoSQLMap is an open source Python tool designed to audit for as well as automate injection attacks and exploit default configuration weaknesses in NoSQL databases and web applications using NoSQL in order to disclose or clone data from the database|
+| ParamSpider | Parameter miner for humans |
+|GoSpider| GoSpider - Fast web spider written in Go
+|eyewitness|EyeWitness is a Python tool written by @CptJesus and @christruncer. It’s goal is to help you efficiently assess what assets of your target to look into first.|
+
