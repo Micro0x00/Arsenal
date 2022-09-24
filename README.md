@@ -81,5 +81,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
   <br>
 </h1>
 
+
 <h3 align="left">Support:</h3>  
-<p><a href="https://www.buymeacoffee.com/Micro0x00"> 
+<p><a href="https://www.buymeacoffee.com/Micro0x00"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Micro0x00" /></a></p><br><br>  
+
