@@ -80,3 +80,6 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
   <img src="https://i.imgur.com/mMC9NdN.png" alt="arsenal" width="700" >
   <br>
 </h1>
+
+<h3 align="left">Support:</h3>  
+<p><a href="https://www.buymeacoffee.com/Micro0x00"> 
