@@ -1,12 +1,12 @@
-#!/bin/bash 
+#!/bin/bash
 #color
 END="\e[1m"
 Red="\e[31m"
 GREEN="\e[32m"
 BOLDGREEN="\e[1;${GREEN}"
 YELLOW="\033[0;33m"
-Cyan="\e[0;36m	"
-#check you are root or not 
+Cyan="\e[0;36m"
+#check you are root or not
 if [ $EUID -ne 0 ]
   then echo -e "${Red}Please run as a root${END}"
   exit
@@ -15,41 +15,42 @@ fi
 
 echo -e "
 ${Red}
- █████╗ ██████╗ ███████╗███████╗███╗   ██╗ █████╗ ██╗     
-██╔══██╗██╔══██╗██╔════╝██╔════╝████╗  ██║██╔══██╗██║     
-███████║██████╔╝███████╗█████╗  ██╔██╗ ██║███████║██║     
-██╔══██║██╔══██╗╚════██║██╔══╝  ██║╚██╗██║██╔══██║██║     
+ █████╗ ██████╗ ███████╗███████╗███╗   ██╗ █████╗ ██╗
+██╔══██╗██╔══██╗██╔════╝██╔════╝████╗  ██║██╔══██╗██║
+███████║██████╔╝███████╗█████╗  ██╔██╗ ██║███████║██║
+██╔══██║██╔══██╗╚════██║██╔══╝  ██║╚██╗██║██╔══██║██║
 ██║  ██║██║  ██║███████║███████╗██║ ╚████║██║  ██║███████╗
-╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ 
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ v1
+                                 
+                                 twitter:Micro0x00
+                                 by @Mohamed Mater "
 
-                                 by @Micro0x00 "
-
-# creat a dir to your arsenal 
+# creat a dir to your arsenal
 mkdir Arsenal
 cd Arsenal
 requirements(){
 go_v=$(go version) &>/dev/nulls
 if ! command -v go &> /dev/null
 then
-    echo "go is not installed" 
+    echo "go is not installed"
     echo "Please install go "
     echo "Check this "
     echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
     # sudo apt-get remove -y golang-go
     # sudo rm -rf /usr/local/go
     # wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
-	# sudo tar -xvf go1.19.1.linux-amd64.tar.gz
-	# sudo mv go /usr/local
+        # sudo tar -xvf go1.19.1.linux-amd64.tar.gz
+        # sudo mv go /usr/local
     # sudo echo "export GOPATH=$HOME/go" >> /etc/profile
     # sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
     # sudo echo "export PATH=$PATH:$GOPATH/bin" >> /etc/profile
     # source /etc/profile #to update you shell dont worry
     exit
-else 
+else
 echo -e "${Cyan}go is already install and your ${go_v}${END}"
 fi
 
-#version 
+#version
 git_v=$(git --version) &> /dev/null
 py_v=$(python3 --version) &> /dev/null
 ruby_v=$(ruby -v) &>/dev/nulls
@@ -57,7 +58,7 @@ rust_v=$(rustc --version)
 
 # Check For The requirements
 echo "Check the requirements"
-sleep 1s
+sleep 4s
 if ! command -v git &> /dev/null
 then
     echo "git is not installed we will installed it for you now "
@@ -67,7 +68,7 @@ then
     then
         echo "githas been installed"
     fi
-else 
+else
     echo -e "${BOLDGREEN}git is already install and your ${git_v}${END}"
 fi
 if ! command -v ruby -v &> /dev/null
@@ -79,7 +80,7 @@ then
     then
         echo "Rubyhas been installed"
     fi
-else 
+else
     echo -e "${Red}ruby is already install and your ${ruby_v}${END}"
 fi
 if ! command -v  rustc --version  &> /dev/null
@@ -91,7 +92,7 @@ then
     then
         echo "Rusthas been installed"
     fi
-else 
+else
     echo -e "rust is already install and your ${rust_v}"
 fi
 if ! command -v python3 &> /dev/null
@@ -103,7 +104,7 @@ then
     then
         echo "DONE"
     fi
-else 
+else
     echo -e "${YELLOW}python is already install and your ${py_v}${END}"
 fi
 
@@ -133,13 +134,13 @@ case $choice in
 esac
 
     else
-        echo "httpx is already installed"    
+        echo "httpx is already installed"
 fi
     # echo "Check if httprobe installed or not"
 if ! command -v  &> /dev/null
     then
     read -p "Do You want install httprobe " choice
-    case $choice in 
+    case $choice in
     no | No | NO | n)
     echo -e "okay "
     ;;
@@ -147,20 +148,20 @@ if ! command -v  &> /dev/null
     echo -e "okay "
     echo "Instaliing httprobe now "
     go install github.com/tomnomnom/httprobe@latest
-    sudo cp $HOME/go/bin/httprobe /usr/local/bin 
+    sudo cp $HOME/go/bin/httprobe /usr/local/bin
     echo "httprobe has been installed"
 
     ;;
     esac
-    else 
+    else
     echo "httprobe is already installed"
-    
+
     fi
         # echo "Check if amass installed or not"
   if ! command -v amass &> /dev/null
     then
     read -p "Do You want install ammas (Y/n) ?" choice
-    case $choice in 
+    case $choice in
     no | No | NO | n)
     echo -e "okay have a good day "
     ;;
@@ -171,34 +172,34 @@ if ! command -v  &> /dev/null
       echo "amass has been installed"
     ;;
     esac
-    else 
+    else
    echo "amass is already installed"
-    
+
     fi
  if ! command -v gobuster &> /dev/null
     then
  read -p "Do You want install gobuster (yes/no) ?" choice
-    case $choice in 
+    case $choice in
     no | No | NO | n)
     echo -e "okay "
     ;;
     yes| YES | Yes | y )
     echo -e "okay "
-    go install github.com/OJ/gobuster/v3@latest 
+    go install github.com/OJ/gobuster/v3@latest
     echo "Instaliing gobuster now "
 
-    sudo cp $HOME/go/bin/gobuster /usr/local/bin 
+    sudo cp $HOME/go/bin/gobuster /usr/local/bin
     echo "GoBuster has been installed"
     ;;
     esac
-    else 
+    else
     echo "Gobuster is already installed"
-    
+
  fi
  if ! command -v nuclei &> /dev/null
  then
  read -p "Do You want install nuclei (Y/n) ? " choice
-    case $choice in 
+    case $choice in
     no | No | NO | n)
     echo -e "okay "
     ;;
@@ -206,20 +207,20 @@ if ! command -v  &> /dev/null
     echo "Instaliing nuclei now "
     go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
     sudo cp $HOME/go/bin/nuclei /usr/local/bin
-     echo "nuclei installiotion is done" 
+     echo "nuclei installiotion is done"
 
     ;;
     esac
-    else 
+    else
        echo "nuclei is already installed"
-        
-    
+
+
    fi
-    
+
  if ! command -v subfinder &> /dev/null
 then
     read -p "Do You want install subfinder (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n )
         echo -e "okay"
         ;;
@@ -229,15 +230,15 @@ then
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
         ;;
-        esac 
+        esac
 
-    else 
+    else
     echo "subfinder is already installed"
 fi
     if ! command -v assetfinder &> /dev/null
 then
     read -p "Do You want install assetfinder (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "Okay have a good day"
         ;;
@@ -248,9 +249,9 @@ then
         echo "assetfinder has been installed "
 
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo " assetfinder is installed"
 
 
@@ -258,7 +259,7 @@ fi
     if ! command -v ffuf &> /dev/null
 then
     read -p "Do You want install ffuf (Y/n) ? " choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -270,9 +271,9 @@ then
         echo "ffuf has been installed "
 
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo "ffuf is already installed"
 
 
@@ -280,7 +281,7 @@ fi
 if ! command -v gf &> /dev/null
 then
     read -p "Do You want install gf (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -291,9 +292,9 @@ then
         cp $HOME/go/bin/gf /usr/local/bin
         echo "gf has been installed"
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo "gf is already installed"
 
 
@@ -301,7 +302,7 @@ fi
  if ! command -v meg &> /dev/null
 then
     read -p "Do You want install meg (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -312,9 +313,9 @@ then
         cp $HOME/go/bin/meg /usr/local/bin
         echo "meg has been installed"
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo "meg is already installed"
 
 
@@ -322,7 +323,7 @@ fi
 if ! command -v waybackurls &> /dev/null
 then
     read -p "Do You want install waybackurls (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -332,9 +333,9 @@ then
         go install github.com/tomnomnom/waybackurls@latest
         cp $HOME/go/bin/waybackurls /usr/local/bin
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo "waybackurls is already installed"
 
 
@@ -343,7 +344,7 @@ fi
     if ! command -v subzy &> /dev/null
     then
         read -p "Do You want install subzy (Y/n) ?" choice
-        case $choice in 
+        case $choice in
             no | No | NO | n)
             echo -e "okay"
             ;;
@@ -351,14 +352,14 @@ fi
             go get -u -v github.com/lukasikic/subzy &> /dev/null
             echo "Instaliing subzy now "
 
-            go install -v github.com/lukasikic/subzy@latest 
-    
+            go install -v github.com/lukasikic/subzy@latest
+
             sudo cp $HOME/go/bin/subzy /usr/local/bin
             echo "subzy has been installed"
             ;;
-            esac 
+            esac
 
-    else 
+    else
         echo "subzy already installed"
 
 
@@ -366,7 +367,7 @@ fi
 if ! command -v dnsx &> /dev/null
 then
     read -p "Do You want install dnsx (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -377,16 +378,16 @@ then
         sudo cp $HOME/go/bin/dnsx /usr/local/bin
         echo "dnsx has been installed"
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo "dnsx is already installed"
 
 fi
 if ! command -v gospider &> /dev/null
 then
     read -p "Do You want install gospider (Y/n) ? " choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -397,30 +398,30 @@ then
         sudo cp $HOME/go/bin/gospider /usr/local/bin
          echo "gospider has been installed"
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo " gospider is  already installed"
     fi
      if ! command -v wpscan &> /dev/null
 then
     read -p "Do You want install wpscan (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
         yes| YES | Yes | y | Y)
         echo -e "okay "
         echo "Instaliing wpscan now "
-        gem install wpscan 
-        if command -v wpscan -h  
-        then 
+        gem install wpscan
+        if command -v wpscan -h
+        then
          echo "wpscan has been installed"
-        fi    
+        fi
         ;;
-        esac 
+        esac
 
-    else 
+    else
         echo "wpscan already installed"
 
 
@@ -428,7 +429,7 @@ fi
     if ! command -v CRLFuzz &> /dev/null
 then
     read -p "Do You want install CRLFuzz (Y/n) " choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -438,14 +439,14 @@ then
         go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
         sudo cp $HOME/go/bin/crlfuzz /usr/local/bin
         ;;
-        esac 
+        esac
  #CRLFuzz
-    else 
+    else
         echo " CRLFuzz has been installed"
     fi
 
     read -p "Do You want install dontgo403 (Y/n)" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -453,18 +454,18 @@ then
         echo -e "okay "
         echo "Instaliing dontgo403 now "
         git clone https://github.com/devploit/dontgo403 &> /dev/null
-        cd dontgo403 
-         go get 
-         go build    
+        cd dontgo403
+         go get
+         go build
          echo "Try ./dontgo403 -h to run"
          cd -
         ;;
-        esac 
+        esac
 
      if ! command -v uncover &> /dev/null
 then
     read -p "Do You want install uncover (Y/n) ?" choice
-    case $choice in 
+    case $choice in
         no | No | NO | n)
         echo -e "okay"
         ;;
@@ -474,14 +475,14 @@ then
         go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest &> /dev/null
         sudo cp $HOME/go/bin/uncover /usr/local/bin
         ;;
-        esac 
+        esac
  #uncover
-    else 
+    else
         echo "uncover is already  installed"
     fi
 
  read -p "Do You want install knockpy (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay hava a gooday"
      ;;
@@ -495,7 +496,7 @@ then
      ;;
      esac
       read -p "Do You want install XSStrike (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
@@ -509,7 +510,7 @@ then
      ;;
      esac
         read -p "Do You want install Logsensor (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
@@ -517,7 +518,7 @@ then
      echo -e "installing Logsensor"
      git clone https://github.com/Mr-Robert0/Logsensor.git &> /dev/null
     cd Logsensor
-    chmod +x logsensor.py 
+    chmod +x logsensor.py
     chmod +x install.sh
     pip install -r requirements.txt
     ./install.sh &> /dev/null
@@ -526,7 +527,7 @@ then
      ;;
      esac
  read -p "Do You want install Altdns (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
@@ -542,7 +543,7 @@ then
      ;;
      esac
      read -p "Do You want install xnLinkFinder (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
@@ -555,7 +556,7 @@ then
      ;;# nsb2 of j us45 ry 3ybd #encoded
     esac
       read -p "Do You want install ParamSpider (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
@@ -569,7 +570,7 @@ then
      ;;
      esac
      read -p "Do You want install NoSQLMap (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
@@ -577,33 +578,33 @@ then
     git clone https://github.com/codingo/NoSQLMap.git &> /dev/null
     cd NoSQLMap
     python3 setup.py install
-    
+
         echo "NoSQLMap has been installed"
         cd - &> /dev/null
      ;;
      esac
      read -p "Do You want install EyeWitness (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/FortyNorthSecurity/EyeWitness.git     &> /dev/null
     bash EyeWitness/Python/setup/setup.sh
-    
+
         echo "EyeWitness has been installed"
         cd - &> /dev/null
      ;;
      esac
-     
+
   read -p "Do You want install chameleon (Y/n) " choice
-     case $choice in 
+     case $choice in
      no | No | NO | n)
      echo -e "okay"
      ;;
      yes| YES | Yes | y | Y)
     cargo install --git https://github.com/iustin24/chameleon
-    
+
         echo "Done"
         cd -
      ;;
