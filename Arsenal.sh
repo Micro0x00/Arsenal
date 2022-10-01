@@ -35,17 +35,19 @@ then
     echo "go is not installed"
     echo "Please install go "
     echo "Check this "
-    echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
-    # sudo apt-get remove -y golang-go
-    # sudo rm -rf /usr/local/go
-    # wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
-        # sudo tar -xvf go1.19.1.linux-amd64.tar.gz
-        # sudo mv go /usr/local
-    # sudo echo "export GOPATH=$HOME/go" >> /etc/profile
-    # sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
-    # sudo echo "export PATH=$PATH:$GOPATH/bin" >> /etc/profile
-    # source /etc/profile #to update you shell dont worry
-    exit
+    # echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
+    sudo apt-get remove -y golang-go
+    sudo rm -rf /usr/local/go
+    wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
+    sudo tar -xvf go1.19.1.linux-amd64.tar.gz
+    sudo mv go /usr/local
+    #  sudo echo "export GOPATH=$HOME/go" >> /etc/profile
+    #  sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+    #  sudo echo "export PATH=$PATH:$GOPATH/bin" >> /etc/profile
+    awk 'BEGIN { print "export GOPATH=$HOME/go" >> "/etc/profile" }'
+    awk 'BEGIN { print "export PATH=$PATH:/usr/local/go/bin" >> "/etc/profile" }'
+    awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
+    source /etc/profile #to update you shell dont worry
 else
 echo -e "${Cyan}go is already install and your ${go_v}${END}"
 fi
@@ -603,12 +605,13 @@ then
      echo -e "okay"
      ;;
      yes| YES | Yes | y | Y)
-    cargo install --git https://github.com/iustin24/chameleon
+    curl -sL https://raw.githubusercontent.com/iustin24/chameleon/master/install.sh | bash
 
-        echo "Done"
+        echo "Chameleon has been installed"
         cd -
      ;;
      esac
+
 
 }
 
