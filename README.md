@@ -45,6 +45,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | Chameleon| Chameleon provides better content discovery by using wappalyzer's set of technology fingerprints alongside custom wordlists tailored to each detected technologies |
 | uncover |uncover is a go wrapper using APIs of well known search engines to quickly discover exposed hosts on the internet. It is built with automation in mind, so you can query it and utilize the results with your current pipeline tools |
 | wpscan | WordPress Security Scanner |
+| GraphQLmap| GraphQLmap is a scripting engine to interact with a graphql endpoint for pentesting purposes.
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
@@ -53,7 +54,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
  - Ruby:gem:
  - Wget:globe_with_meridians:
  - GO-Lang:poop::poop::poop:
- - Rust:fast:
+ - Rust
  
  ----
  ## Go-lang installation 
