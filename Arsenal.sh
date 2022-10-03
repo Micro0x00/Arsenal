@@ -33,13 +33,13 @@ go_v=$(go version) &>/dev/nulls
 if ! command -v go &> /dev/null
 then
     echo "go is not installed"
-    echo "Please install go "
-    echo "Check this "
+    echo "installing go now "
+    # echo "Check this "
     # echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
-    sudo apt-get remove -y golang-go
-    sudo rm -rf /usr/local/go
-    wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
-    sudo tar -xvf go1.19.1.linux-amd64.tar.gz
+    sudo apt-get remove -y golang-go &>/dev/nulls
+    sudo rm -rf /usr/local/go &>/dev/nulls
+    wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz &>/dev/nulls
+    sudo tar -xvf go1.19.1.linux-amd64.tar.gz &>/dev/nulls
     sudo mv go /usr/local
     #  sudo echo "export GOPATH=$HOME/go" >> /etc/profile
     #  sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
@@ -49,7 +49,7 @@ then
     awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
     source /etc/profile #to update you shell dont worry
 else
-echo -e "${Cyan}go is already install and your ${go_v}${END}"
+echo -e "${Cyan}go is already install and your ${go_v:13}${END}"
 fi
 
 #version
@@ -68,10 +68,10 @@ then
     apt-get install git -y &> /dev/null
     if command -v git &> /dev/null
     then
-        echo "githas been installed"
+        echo "git has been installed"
     fi
 else
-    echo -e "${BOLDGREEN}git is already install and your ${git_v}${END}"
+    echo -e "${BOLDGREEN}git is already installed and your ${git_v}${END}"
 fi
 if ! command -v ruby -v &> /dev/null
 then
@@ -453,7 +453,6 @@ then
         echo -e "okay"
         ;;
         yes| YES | Yes | y | Y)
-        echo -e "okay "
         echo "Instaliing dontgo403 now "
         git clone https://github.com/devploit/dontgo403 &> /dev/null
         cd dontgo403
@@ -579,7 +578,7 @@ then
      yes| YES | Yes | y |Y )
     git clone https://github.com/codingo/NoSQLMap.git &> /dev/null
     cd NoSQLMap
-    python3 setup.py install
+    python3 setup.py install /dev/null
 
         echo "NoSQLMap has been installed"
         cd - &> /dev/null
@@ -592,7 +591,7 @@ then
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/FortyNorthSecurity/EyeWitness.git     &> /dev/null
-    bash EyeWitness/Python/setup/setup.sh
+     ./EyeWitness/Python/setup/setup.sh
 
         echo "EyeWitness has been installed"
         cd - &> /dev/null
@@ -602,7 +601,7 @@ then
   read -p "Do You want install chameleon (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     curl -sL https://raw.githubusercontent.com/iustin24/chameleon/master/install.sh | bash
@@ -612,8 +611,66 @@ then
      ;;
      esac
 
+ read -p "Do You want install GraphQLmap (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+    git clone https://github.com/swisskyrepo/GraphQLmap
+    cd GraphQLmap/
+    python3 setup.py install
+        echo "GraphQLmap has been installed"
+        cd -
+     ;;
+     esac
 
+ read -p "Do You want install WhatWeb (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+     git clone https://github.com/urbanadventurer/WhatWeb.git
+    cd WhatWeb/
+    gem install bundler
+    bundle update
+    bundle install
+    echo "WhatWeb has been installed"
+    cd -
+     ;;
+     esac
+
+read -p "Do You want install http request smuggling (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+    git clone https://github.com/anshumanpattnaik/http-request-smuggling.git
+    cd http-request-smuggling
+    pip3 install -r requirements.txt
+    echo "http request smuggling has been installed"
+    cd -
+     ;;
+     esac
 }
+
+read -p "Do You want install commix (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+    git clone https://github.com/commixproject/commix.git commix
+    cd commix
+    echo "commix has been installed"
+    cd -
+     ;;
+     esac
+}
+
+
 
 requirements
 Tools
