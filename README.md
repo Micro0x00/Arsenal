@@ -49,6 +49,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | dalfox | DalFox is an powerful open source XSS scanning tool and parameter analyzer and utility that fast the process of detecting and verify XSS flaws. It comes with a powerful testing engine, many niche features for the cool hacker!|
 |http request smuggling | HTTP Request Smuggling Detection Tool|
 |commix|Commix (short for [comm]and [i]njection e[x]ploiter) is an open source penetration testing tool, written by Anastasios Stasinopoulos (@ancst), that automates the detection and exploitation of command injection vulnerabilities.|
+| GoLinkFinder | A minimal JS endpoint extractor
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
