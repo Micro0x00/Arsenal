@@ -28,6 +28,8 @@ ${Red}
 # creat a dir to your arsenal
 mkdir Arsenal
 cd Arsenal
+echo "Check the requirements"
+sleep 3s
 requirements(){
 go_v=$(go version) &>/dev/nulls
 if ! command -v go &> /dev/null
@@ -49,7 +51,7 @@ then
     awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
     source /etc/profile #to update you shell dont worry
 else
-echo -e "${Cyan}go is already install and your ${go_v:13}${END}"
+echo -e "${Cyan}go is already install and your version :${go_v:13}${END}"
 fi
 
 #version
@@ -59,8 +61,6 @@ ruby_v=$(ruby -v) &>/dev/nulls
 rust_v=$(rustc --version)
 
 # Check For The requirements
-echo "Check the requirements"
-sleep 4s
 if ! command -v git &> /dev/null
 then
     echo "git is not installed we will installed it for you now "
@@ -71,7 +71,7 @@ then
         echo "git has been installed"
     fi
 else
-    echo -e "${BOLDGREEN}git is already installed and your ${git_v}${END}"
+    echo -e "${BOLDGREEN}git is already installed and your ${git_v:13}${END}"
 fi
 if ! command -v ruby -v &> /dev/null
 then
@@ -481,7 +481,47 @@ then
     else
         echo "uncover is already  installed"
     fi
+if ! command -v dalfox &> /dev/null
+then
+    read -p "Do You want install Dalfox (Y/n) ?" choice
+    case $choice in
+        no | No | NO | n)
+        echo -e "skip"
+        ;;
+        yes| YES | Yes | y | Y )
+        echo "Instaliing Dalfox now "
+        go install github.com/hahwul/dalfox/v2@latest
+        cp $HOME/go/bin/dalfox /usr/local/bin
+        echo "dalfox has been installed"
+        ;;
+        esac
 
+    else
+        echo "dalfox is already installed"
+
+
+fi
+
+if ! command -v GoLinkFinder &> /dev/null
+then
+    read -p "Do You want install GoLinkFinder (Y/n) ?" choice
+    case $choice in
+        no | No | NO | n)
+        echo -e "skip"
+        ;;
+        yes| YES | Yes | y | Y)
+        echo "Instaliing GoLinkFinder now "
+        go install github.com/0xsha/GoLinkFinder@latest
+        cp $HOME/go/bin/GoLinkFinder /usr/local/bin
+        echo "GoLinkFinder has been installed"
+        ;;
+        esac
+
+    else
+        echo "GoLinkFinder is already installed"
+
+
+fi
  read -p "Do You want install knockpy (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -654,7 +694,7 @@ read -p "Do You want install http request smuggling (Y/n) " choice
     cd -
      ;;
      esac
-}
+
 
 read -p "Do You want install commix (Y/n) " choice
      case $choice in
@@ -665,6 +705,21 @@ read -p "Do You want install commix (Y/n) " choice
     git clone https://github.com/commixproject/commix.git commix
     cd commix
     echo "commix has been installed"
+    cd -
+     ;;
+     esac
+
+read -p "Do You want install JWT_TOOL (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+    git clone https://github.com/ticarpi/jwt_tool
+    cd jwt_tool
+    python3 -m pip install termcolor cprint pycryptodomex requests
+    chmod +x jwt_tool.py
+    echo "JWT_TOOL has been installed"
     cd -
      ;;
      esac
