@@ -45,11 +45,14 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | Chameleon| Chameleon provides better content discovery by using wappalyzer's set of technology fingerprints alongside custom wordlists tailored to each detected technologies |
 | uncover |uncover is a go wrapper using APIs of well known search engines to quickly discover exposed hosts on the internet. It is built with automation in mind, so you can query it and utilize the results with your current pipeline tools |
 | wpscan | WordPress Security Scanner |
-| GraphQLmap| GraphQLmap is a scripting engine to interact with a graphql endpoint for pentesting purposes.|
+| GraphQLmap| GraphQLmap is a scripting engine to interact with a graphql endpoint for pentesting purposes |
 | dalfox | DalFox is an powerful open source XSS scanning tool and parameter analyzer and utility that fast the process of detecting and verify XSS flaws. It comes with a powerful testing engine, many niche features for the cool hacker!|
 |http request smuggling | HTTP Request Smuggling Detection Tool|
-|commix|Commix (short for [comm]and [i]njection e[x]ploiter) is an open source penetration testing tool, written by Anastasios Stasinopoulos (@ancst), that automates the detection and exploitation of command injection vulnerabilities.|
-| GoLinkFinder | A minimal JS endpoint extractor
+|commix|Commix (short for [comm]and [i]njection e[x]ploiter) is an open source penetration testing tool, written by Anastasios Stasinopoulos (@ancst), that automates the detection and exploitation of command injection vulnerabilities|
+| GoLinkFinder | A minimal JS endpoint extractor | 
+| JWT Toolkit v2 | JWT Tookkit is a toolkit for validating, forging, scanning and tampering JWTs (JSON Web Tokens) |
+| GitLeaks | check git repos for secrets and keys |
+| WhatWeb | Next generation web scanner | 
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
