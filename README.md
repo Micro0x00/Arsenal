@@ -53,6 +53,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | JWT Toolkit v2 | JWT Tookkit is a toolkit for validating, forging, scanning and tampering JWTs (JSON Web Tokens) |
 | GitLeaks | check git repos for secrets and keys |
 | WhatWeb | Next generation web scanner | 
+| Arjun | Arjun can find query parameters for URL endpoints. If you don't get what that means, it's okay, read along |
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
