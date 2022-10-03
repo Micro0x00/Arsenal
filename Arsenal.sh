@@ -6,6 +6,7 @@ GREEN="\e[32m"
 BOLDGREEN="\e[1;${GREEN}"
 YELLOW="\033[0;33m"
 Cyan="\e[0;36m"
+white="\e[0;37m"
 #check you are root or not
 if [ $EUID -ne 0 ]
   then echo -e "${Red}Please run as a root${END}"
@@ -51,7 +52,7 @@ then
     awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
     source /etc/profile #to update you shell dont worry
 else
-echo -e "${Cyan}go is already install and your version :${go_v:13}${END}"
+echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
 fi
 
 #version
@@ -63,7 +64,7 @@ rust_v=$(rustc --version)
 # Check For The requirements
 if ! command -v git &> /dev/null
 then
-    echo "git is not installed we will installed it for you now "
+    echo "Git is not installed, we will install it for you now"
     echo "Installing Git"
     apt-get install git -y &> /dev/null
     if command -v git &> /dev/null
@@ -71,7 +72,7 @@ then
         echo "git has been installed"
     fi
 else
-    echo -e "${BOLDGREEN}git is already installed and your ${git_v:13}${END}"
+    echo -e "${BOLDGREEN}Git is already installed and your version is:${git_v:11}${END}"
 fi
 if ! command -v ruby -v &> /dev/null
 then
@@ -80,10 +81,10 @@ then
     apt-get install ruby-full -y
     if command -v ruby -v &> /dev/null
     then
-        echo "Rubyhas been installed"
+        echo "Ruby has been installed"
     fi
 else
-    echo -e "${Red}ruby is already install and your ${ruby_v}${END}"
+    echo -e "${Red}Ruby is already installed and your version is: ${ruby_v:5:5}${END}"
 fi
 if ! command -v  rustc --version  &> /dev/null
 then
@@ -92,10 +93,10 @@ then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     if command -v rustc --versiony &> /dev/null
     then
-        echo "Rusthas been installed"
+        echo "Rust has been installed"
     fi
 else
-    echo -e "rust is already install and your ${rust_v}"
+    echo -e "${white}Rust is already install and your version is: ${rust_v:5:8}${END}"
 fi
 if ! command -v python3 &> /dev/null
 then
@@ -107,7 +108,7 @@ then
         echo "DONE"
     fi
 else
-    echo -e "${YELLOW}python is already install and your ${py_v}${END}"
+    echo -e "${YELLOW}Python is already install and your version is :${py_v:6}${END}"
 fi
 
 
@@ -121,7 +122,7 @@ read -p "Do you want install httpx (Y/n) ? " choice
 case $choice in
 
   no | NO | n | No | N)
-    echo  "okay hava a good day "
+    echo  "o"
     ;;
 
   yes | YES | Y | Yes | y)
@@ -144,10 +145,9 @@ if ! command -v  &> /dev/null
     read -p "Do You want install httprobe " choice
     case $choice in
     no | No | NO | n)
-    echo -e "okay "
+    echo -e "skip "
     ;;
     yes| YES | Yes | y | Y )
-    echo -e "okay "
     echo "Instaliing httprobe now "
     go install github.com/tomnomnom/httprobe@latest
     sudo cp $HOME/go/bin/httprobe /usr/local/bin
@@ -165,7 +165,7 @@ if ! command -v  &> /dev/null
     read -p "Do You want install ammas (Y/n) ?" choice
     case $choice in
     no | No | NO | n)
-    echo -e "okay have a good day "
+    echo -e "skip"
     ;;
     yes| YES | Yes | y | Y)
     go install -v github.com/OWASP/Amass/v3/...@master &> /dev/null
@@ -183,12 +183,11 @@ if ! command -v  &> /dev/null
  read -p "Do You want install gobuster (yes/no) ?" choice
     case $choice in
     no | No | NO | n)
-    echo -e "okay "
+    echo -e "skip"
     ;;
     yes| YES | Yes | y )
-    echo -e "okay "
-    go install github.com/OJ/gobuster/v3@latest
     echo "Instaliing gobuster now "
+    go install github.com/OJ/gobuster/v3@latest
 
     sudo cp $HOME/go/bin/gobuster /usr/local/bin
     echo "GoBuster has been installed"
@@ -203,7 +202,7 @@ if ! command -v  &> /dev/null
  read -p "Do You want install nuclei (Y/n) ? " choice
     case $choice in
     no | No | NO | n)
-    echo -e "okay "
+    echo -e  "skip"
     ;;
     YES | Yes | y | yes | Y)
     echo "Instaliing nuclei now "
@@ -224,10 +223,10 @@ then
     read -p "Do You want install subfinder (Y/n) ?" choice
     case $choice in
         no | No | NO | n )
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y )
-        echo -e "okay "
+        echo -e "skip "
         echo "Instaliing subfinder now "
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
@@ -242,7 +241,7 @@ then
     read -p "Do You want install assetfinder (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "Okay have a good day"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing assetfinder now "
@@ -263,10 +262,9 @@ then
     read -p "Do You want install ffuf (Y/n) ? " choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y )
-        echo -e "okay "
         echo "Instaliing ffuf now "
         go install github.com/ffuf/ffuf@latest
         cp $HOME/go/bin/ffuf /usr/local/bin
@@ -285,10 +283,9 @@ then
     read -p "Do You want install gf (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y )
-        echo -e "okay "
         echo "Instaliing gf now "
         go install github.com/tomnomnom/gf@latest
         cp $HOME/go/bin/gf /usr/local/bin
@@ -306,10 +303,9 @@ then
     read -p "Do You want install meg (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
-        echo -e "okay "
         echo "Instaliing meg now "
         go install github.com/tomnomnom/meg@latest
         cp $HOME/go/bin/meg /usr/local/bin
@@ -327,10 +323,9 @@ then
     read -p "Do You want install waybackurls (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
-        echo -e "okay "
         echo "Instaliing waybackurls now "
         go install github.com/tomnomnom/waybackurls@latest
         cp $HOME/go/bin/waybackurls /usr/local/bin
@@ -348,7 +343,7 @@ fi
         read -p "Do You want install subzy (Y/n) ?" choice
         case $choice in
             no | No | NO | n)
-            echo -e "okay"
+            echo -e "skip"
             ;;
             yes| YES | Yes | y| Y )
             go get -u -v github.com/lukasikic/subzy &> /dev/null
@@ -371,10 +366,9 @@ then
     read -p "Do You want install dnsx (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y |Y )
-        echo -e "okay "
         echo "Instaliing dnsx now "
         go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
         sudo cp $HOME/go/bin/dnsx /usr/local/bin
@@ -391,10 +385,9 @@ then
     read -p "Do You want install gospider (Y/n) ? " choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
-        echo -e "okay "
         echo "Instaliing gospider now "
         go install github.com/jaeles-project/gospider@latest
         sudo cp $HOME/go/bin/gospider /usr/local/bin
@@ -410,10 +403,9 @@ then
     read -p "Do You want install wpscan (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
-        echo -e "okay "
         echo "Instaliing wpscan now "
         gem install wpscan
         if command -v wpscan -h
@@ -433,10 +425,9 @@ then
     read -p "Do You want install CRLFuzz (Y/n) " choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y )
-        echo -e "okay "
         echo "Instaliing CRLFuzz now "
         go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
         sudo cp $HOME/go/bin/crlfuzz /usr/local/bin
@@ -450,7 +441,7 @@ then
     read -p "Do You want install dontgo403 (Y/n)" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing dontgo403 now "
@@ -468,10 +459,9 @@ then
     read -p "Do You want install uncover (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "okay"
+        echo -e "skip"
         ;;
         yes| YES | Yes | y |Y )
-        echo -e "okay "
         echo "Instaliing uncover now "
         go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest &> /dev/null
         sudo cp $HOME/go/bin/uncover /usr/local/bin
@@ -525,7 +515,7 @@ fi
  read -p "Do You want install knockpy (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay hava a gooday"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y )
 
@@ -539,7 +529,7 @@ fi
       read -p "Do You want install XSStrike (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y )
      echo -e "installing XSStrike"
@@ -553,7 +543,7 @@ fi
         read -p "Do You want install Logsensor (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
      echo -e "installing Logsensor"
@@ -570,14 +560,14 @@ fi
  read -p "Do You want install Altdns (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
      echo -e "installing Altdns"
       git clone https://github.com/infosec-au/altdns.git &> /dev/null
         cd altdns
         pip3 install -r requirements.txt
-        echo "Done"
+        echo "Altdns has been installed"
         echo "to run try python3 altdns --help"
         cd - &> /dev/null
 
@@ -586,7 +576,7 @@ fi
      read -p "Do You want install xnLinkFinder (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git  &> /dev/null
@@ -599,7 +589,7 @@ fi
       read -p "Do You want install ParamSpider (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y )
     git clone https://github.com/devanshbatham/ParamSpider &> /dev/null
@@ -613,7 +603,7 @@ fi
      read -p "Do You want install NoSQLMap (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y |Y )
     git clone https://github.com/codingo/NoSQLMap.git &> /dev/null
@@ -627,7 +617,7 @@ fi
      read -p "Do You want install EyeWitness (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "okay"
+     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/FortyNorthSecurity/EyeWitness.git     &> /dev/null
@@ -723,8 +713,35 @@ read -p "Do You want install JWT_TOOL (Y/n) " choice
     cd -
      ;;
      esac
-}
 
+
+read -p "Do You want install Arjun (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+    git clone https://github.com/s0md3v/Arjun
+    cd Arjun
+    python3 setup.py install    
+    echo "Arjun has been installed"
+    cd -
+     ;;
+     esac
+read -p "Do You want install Gitleaks (Y/n) " choice
+     case $choice in
+     no | No | NO | n)
+     echo -e "skip"
+     ;;
+     yes| YES | Yes | y | Y)
+    git clone https://github.com/zricethezav/gitleaks.git
+    cd gitleaks
+    make build
+    mv gitleaks /usr/local/bin
+    cd -
+     ;;
+     esac
+}
 
 
 requirements
