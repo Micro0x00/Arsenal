@@ -65,7 +65,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
  - Rust
  
  ----
- ## Go-lang installation 
+ ## Go-lang installation (Manual)
      sudo apt-get remove -y golang-go
      sudo rm -rf /usr/local/go
      wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
