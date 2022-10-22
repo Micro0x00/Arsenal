@@ -208,7 +208,7 @@ if ! command -v  &> /dev/null
     echo "Instaliing nuclei now "
     go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
     sudo cp $HOME/go/bin/nuclei /usr/local/bin
-     echo "nuclei installiotion is done"
+     echo "nuclei installation is done"
 
     ;;
     esac
