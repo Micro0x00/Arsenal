@@ -185,7 +185,7 @@ if ! command -v  &> /dev/null
     no | No | NO | n)
     echo -e "skip"
     ;;
-    yes| YES | Yes | y )
+    yes| YES | Yes | y | Y)
     echo "Instaliing gobuster now "
     go install github.com/OJ/gobuster/v3@latest
 
