@@ -54,7 +54,7 @@ then
 else
 echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
 fi
-
+apt-get install build-essential &> /dev/null # for azure
 #version
 git_v=$(git --version) &> /dev/null
 py_v=$(python3 --version) &> /dev/null
