@@ -50,6 +50,7 @@ then
     awk 'BEGIN { print "export GOPATH=$HOME/go" >> "/etc/profile" }'
     awk 'BEGIN { print "export PATH=$PATH:/usr/local/go/bin" >> "/etc/profile" }'
     awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
+    echo "If get this massege try to do . /etc/profile or source because you need to update your shell and run again "
     source /etc/profile #to update you shell dont worry
 else
 echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
