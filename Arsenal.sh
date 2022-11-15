@@ -33,7 +33,7 @@ echo "Check the requirements"
 sleep 3s
 requirements(){
 go_v=$(go version) &>/dev/nulls
-if ! command -v go &> /dev/null
+if ! command -v go &> /dev/nulls
 then
     echo "go is not installed"
     echo "installing go now "
@@ -60,7 +60,7 @@ apt-get install build-essential -y &> /dev/null # for azure
 git_v=$(git --version) &> /dev/null
 py_v=$(python3 --version) &> /dev/null
 ruby_v=$(ruby -v) &>/dev/nulls
-rust_v=$(rustc --version)
+rust_v=$(rustc --version) &>/dev/nulls
 
 # Check For The requirements
 if ! command -v git &> /dev/null
