@@ -141,7 +141,7 @@ esac
         echo "httpx is already installed"
 fi
     # echo "Check if httprobe installed or not"
-if ! command httprobe -v &> /dev/null
+if ! command -v httprobe &> /dev/null
     then
     read -p "Do You want install httprobe " choice
     case $choice in
