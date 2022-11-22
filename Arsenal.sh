@@ -247,7 +247,6 @@ then
         yes| YES | Yes | y | Y)
         echo "Instaliing assetfinder now "
         sudo go install github.com/tomnomnom/assetfinder@latest
-        sudo cp $HOME/go/bin/assetfinder /usr/local/bin
         echo "assetfinder has been installed "
 
         ;;
