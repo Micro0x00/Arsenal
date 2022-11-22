@@ -32,17 +32,17 @@ cd Arsenal
 echo "Check the requirements"
 sleep 3s
 requirements(){
-go_v=$(go version) &>/dev/nulls
-if ! command -v go &> /dev/nulls
+go_v=$(go version) &>/dev/null
+if ! command -v go &> /dev/null
 then
     echo "go is not installed"
     echo "installing go now "
     # echo "Check this "
     # echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
-    sudo apt-get remove -y golang-go &>/dev/nulls
-    sudo rm -rf /usr/local/go &>/dev/nulls
-    wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz &>/dev/nulls
-    sudo tar -xvf go1.19.1.linux-amd64.tar.gz &>/dev/nulls
+    sudo apt-get remove -y golang-go &>/dev/null
+    sudo rm -rf /usr/local/go &>/dev/null
+    wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz &>/dev/null
+    sudo tar -xvf go1.19.1.linux-amd64.tar.gz &>/dev/null
     sudo mv go /usr/local
     #  sudo echo "export GOPATH=$HOME/go" >> /etc/profile
     #  sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
@@ -59,8 +59,8 @@ apt-get install build-essential -y &> /dev/null # for azure
 #version
 git_v=$(git --version) &> /dev/null
 py_v=$(python3 --version) &> /dev/null
-ruby_v=$(ruby -v) &>/dev/nulls
-rust_v=$(rustc --version) &>/dev/nulls
+ruby_v=$(ruby -v) &>/dev/null
+rust_v=$(rustc --version) &>/dev/null
 
 # Check For The requirements
 if ! command -v git &> /dev/null
