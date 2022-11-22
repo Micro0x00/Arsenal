@@ -285,7 +285,7 @@ then
         no | No | NO | n)
         echo -e "skip"
         ;;
-        yes| YES | Yes | y )
+        yes| YES | Yes | y | Y)
         echo "Instaliing gf now "
         go install github.com/tomnomnom/gf@latest
         cp $HOME/go/bin/gf /usr/local/bin
