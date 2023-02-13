@@ -27,7 +27,7 @@ ${Red}
                                  by @Mohamed Mater "
 
 # creat a dir to your arsenal
-mkdir Arsenal
+mkdir Arsenal &> /dev/null
 cd Arsenal
 echo "Check the requirements"
 sleep 3s
