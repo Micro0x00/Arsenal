@@ -92,7 +92,7 @@ then
     echo "rust is not installed we will installed it for you now "
     echo "Installing rust"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    if command -v rustc --versiony &> /dev/null
+    if command -v rustc --version &> /dev/null
     then
         echo "Rust has been installed"
     fi
