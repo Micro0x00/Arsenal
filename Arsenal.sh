@@ -60,8 +60,8 @@ apt-get install build-essential -y &> /dev/null # for azure
 #version
 git_v=$(git --version) &> /dev/null
 py_v=$(python3 --version) &> /dev/null
-ruby_v=$(ruby -v) &>/dev/null
-rust_v=$(rustc --version) &>/dev/null
+ruby_v=$(ruby -v) &> /dev/null
+rust_v=$(rustc --version) &> /dev/null
 
 # Check For The requirements
 if ! command -v git &> /dev/null
