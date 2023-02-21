@@ -231,6 +231,7 @@ then
         echo "Instaliing subfinder now "
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest &> /dev/null
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
+        echo "subfinder installation is done"
         ;;
         esac
 
