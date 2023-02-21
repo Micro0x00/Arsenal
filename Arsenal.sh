@@ -130,15 +130,14 @@ read -p "Do you want install httpx (Y/n) ? " choice
 case $choice in
 
   no | NO | n | No | N)
-    echo  "o"
+  echo ""
     ;;
 
   yes | YES | Y | Yes | y)
         echo "installing httpx now"
-        go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
-        sudo cp $HOME/go/bin/httpx /usr/local/bin
         if command -v httpx &> /dev/null
         then
+        go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
         echo "httpx has been installed "
         fi
                 ;;
@@ -153,7 +152,6 @@ if ! command -v httprobe &> /dev/null
     read -p "Do You want install httprobe " choice
     case $choice in
     no | No | NO | n)
-    echo -e "skip "
     ;;
     yes| YES | Yes | y | Y )
     echo "Instaliing httprobe now "
@@ -173,7 +171,6 @@ if ! command -v httprobe &> /dev/null
     read -p "Do You want install ammas (Y/n) ?" choice
     case $choice in
     no | No | NO | n)
-    echo -e "skip"
     ;;
     yes| YES | Yes | y | Y)
     go install -v github.com/OWASP/Amass/v3/...@master &> /dev/null
