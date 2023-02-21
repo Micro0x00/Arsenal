@@ -30,8 +30,8 @@ ${Red}
 mkdir Arsenal &> /dev/null
 cd Arsenal
 echo "Check the requirements"
-sleep 3s
-requirements(){
+sleep 2s
+## check go 
 go_v=$(go version) &>/dev/null
 if ! command -v go &> /dev/null
 then
@@ -52,10 +52,11 @@ then
     awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
     echo "If you get this massege try to do . /etc/profile or source because you need to update your shell and run again "
     source /etc/profile #to update you shell dont worry
-    return
+    exit()
 else
 echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
 fi
+requirements(){
 apt-get install build-essential -y &> /dev/null # for azure
 #version
 git_v=$(git --version) &> /dev/null
