@@ -191,7 +191,7 @@ if ! command -v httprobe &> /dev/null
     ;;
     yes| YES | Yes | y | Y)
     echo "Instaliing gobuster now "
-    go install github.com/OJ/gobuster/v3@latest
+    go install github.com/OJ/gobuster/v3@latest &> /dev/null
 
     sudo cp $HOME/go/bin/gobuster /usr/local/bin
     echo "GoBuster has been installed"
@@ -209,7 +209,7 @@ if ! command -v httprobe &> /dev/null
     ;;
     YES | Yes | y | yes | Y)
     echo "Instaliing nuclei now "
-    go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+    go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest &> /dev/null
     sudo cp $HOME/go/bin/nuclei /usr/local/bin
      echo "nuclei installation is done"
 
@@ -229,7 +229,7 @@ then
         ;;
         yes| YES | Yes | y | Y )
         echo "Instaliing subfinder now "
-        go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+        go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest &> /dev/null
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
         ;;
         esac
@@ -245,7 +245,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing assetfinder now "
-        sudo go install github.com/tomnomnom/assetfinder@latest
+        sudo go install github.com/tomnomnom/assetfinder@latest &> /dev/null
         echo "assetfinder has been installed "
 
         ;;
@@ -284,7 +284,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing gf now "
-        go install github.com/tomnomnom/gf@latest
+        go install github.com/tomnomnom/gf@latest &> /dev/null
         cp $HOME/go/bin/gf /usr/local/bin
         echo "gf has been installed"
         ;;
@@ -303,7 +303,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing meg now "
-        go install github.com/tomnomnom/meg@latest
+        go install github.com/tomnomnom/meg@latest &> /dev/null
         cp $HOME/go/bin/meg /usr/local/bin
         echo "meg has been installed"
         ;;
@@ -322,7 +322,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing waybackurls now "
-        go install github.com/tomnomnom/waybackurls@latest
+        go install github.com/tomnomnom/waybackurls@latest &> /dev/null
         cp $HOME/go/bin/waybackurls /usr/local/bin
         ;;
         esac
@@ -363,7 +363,7 @@ then
         ;;
         yes| YES | Yes | y |Y )
         echo "Instaliing dnsx now "
-        go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+        go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest &> /dev/null
         sudo cp $HOME/go/bin/dnsx /usr/local/bin
         echo "dnsx has been installed"
         ;;
@@ -381,7 +381,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing gospider now "
-        go install github.com/jaeles-project/gospider@latest
+        go install github.com/jaeles-project/gospider@latest &> /dev/null
         sudo cp $HOME/go/bin/gospider /usr/local/bin
          echo "gospider has been installed"
         ;;
@@ -419,7 +419,7 @@ then
         ;;
         yes| YES | Yes | y | Y )
         echo "Instaliing CRLFuzz now "
-        go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
+        go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest &> /dev/null
         sudo cp $HOME/go/bin/crlfuzz /usr/local/bin
         ;;
         esac
@@ -490,7 +490,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing GoLinkFinder now "
-        go install github.com/0xsha/GoLinkFinder@latest
+        go install github.com/0xsha/GoLinkFinder@latest &> /dev/null
         cp $HOME/go/bin/GoLinkFinder /usr/local/bin
         echo "GoLinkFinder has been installed"
         ;;
@@ -514,7 +514,7 @@ fi
      cd -
      ;;
      esac
-      read -p "Do You want install XSStrike (Y/n) " choice
+      read -p "Do You want install XSStrike (Y/n) " choice 
      case $choice in
      no | No | NO | n)
      ;;
