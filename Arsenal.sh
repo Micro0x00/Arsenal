@@ -126,7 +126,7 @@ Tools(){
     # echo "Check if httpx installed or not"
     if ! command -v httpx -h &> /dev/null
 then
-read -p "Do you want install httpx (Y/n) ? " choice
+read -p "Do you want install httpx (Y/n) : " choice
 case $choice in
 
   no | NO | n | No | N)
@@ -149,7 +149,7 @@ fi
     # echo "Check if httprobe installed or not"
 if ! command -v httprobe &> /dev/null
     then
-    read -p "Do You want install httprobe " choice
+    read -p "Do You want install httprobe (Y/n) : " choice
     case $choice in
     no | No | NO | n)
     ;;
@@ -168,7 +168,7 @@ if ! command -v httprobe &> /dev/null
         # echo "Check if amass installed or not"
   if ! command -v amass &> /dev/null
     then
-    read -p "Do You want install ammas (Y/n) ?" choice
+    read -p "Do You want install ammas (Y/n) :" choice
     case $choice in
     no | No | NO | n)
     ;;
@@ -185,9 +185,9 @@ if ! command -v httprobe &> /dev/null
     fi
  if ! command -v gobuster &> /dev/null
     then
- read -p "Do You want install gobuster (yes/no) ?" choice
+ read -p "Do You want install gobuster (Y/n) :" choice
     case $choice in
-    no | No | NO | n)
+    no | No | NO | n | N)
     ;;
     yes| YES | Yes | y | Y)
     echo "Instaliing gobuster now "
@@ -203,7 +203,7 @@ if ! command -v httprobe &> /dev/null
  fi
  if ! command -v nuclei &> /dev/null
  then
- read -p "Do You want install nuclei (Y/n) ? " choice
+ read -p "Do You want install nuclei (Y/n) : " choice
     case $choice in
     no | No | NO | n)
     ;;
@@ -223,7 +223,7 @@ if ! command -v httprobe &> /dev/null
 
  if ! command -v subfinder &> /dev/null
 then
-    read -p "Do You want install subfinder (Y/n) ?" choice
+    read -p "Do You want install subfinder (Y/n) : " choice
     case $choice in
         no | No | NO | n )
         ;;
@@ -239,7 +239,7 @@ then
 fi
     if ! command -v assetfinder &> /dev/null
 then
-    read -p "Do You want install assetfinder (Y/n) ?" choice
+    read -p "Do You want install assetfinder (Y/n) :" choice
     case $choice in
         no | No | NO | n)
         ;;
