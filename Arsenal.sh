@@ -58,9 +58,9 @@ else
 echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
 fi
 if ! command -v go &> /dev/null
-
+then
     echo "If you get this massege do this commanad source /etc/profile because you need to update your shell and run again #golang is installed have a good day !"
-exit()
+    exit
 fi
 apt-get install build-essential -y &> /dev/null # for azure
 #version
