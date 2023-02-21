@@ -246,7 +246,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing assetfinder now "
-        sudo go install github.com/tomnomnom/assetfinder@latest &> /dev/null
+        go install github.com/tomnomnom/assetfinder@latest &> /dev/null
         echo "assetfinder has been installed "
 
         ;;
