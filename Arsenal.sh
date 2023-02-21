@@ -188,7 +188,6 @@ if ! command -v httprobe &> /dev/null
  read -p "Do You want install gobuster (yes/no) ?" choice
     case $choice in
     no | No | NO | n)
-    echo -e "skip"
     ;;
     yes| YES | Yes | y | Y)
     echo "Instaliing gobuster now "
@@ -207,7 +206,6 @@ if ! command -v httprobe &> /dev/null
  read -p "Do You want install nuclei (Y/n) ? " choice
     case $choice in
     no | No | NO | n)
-    echo -e  "skip"
     ;;
     YES | Yes | y | yes | Y)
     echo "Instaliing nuclei now "
@@ -228,10 +226,8 @@ then
     read -p "Do You want install subfinder (Y/n) ?" choice
     case $choice in
         no | No | NO | n )
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y )
-        echo -e "skip "
         echo "Instaliing subfinder now "
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
@@ -246,7 +242,6 @@ then
     read -p "Do You want install assetfinder (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing assetfinder now "
@@ -266,7 +261,6 @@ then
     read -p "Do You want install ffuf (Y/n) ? " choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y )
         echo "Instaliing ffuf now "
@@ -287,7 +281,6 @@ then
     read -p "Do You want install gf (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing gf now "
@@ -307,7 +300,6 @@ then
     read -p "Do You want install meg (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing meg now "
@@ -327,7 +319,6 @@ then
     read -p "Do You want install waybackurls (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing waybackurls now "
@@ -347,7 +338,6 @@ fi
         read -p "Do You want install subzy (Y/n) ?" choice
         case $choice in
             no | No | NO | n)
-            echo -e "skip"
             ;;
             yes| YES | Yes | y| Y )
             go get -u -v github.com/lukasikic/subzy &> /dev/null
@@ -370,7 +360,6 @@ then
     read -p "Do You want install dnsx (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y |Y )
         echo "Instaliing dnsx now "
@@ -389,7 +378,6 @@ then
     read -p "Do You want install gospider (Y/n) ? " choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing gospider now "
@@ -407,7 +395,6 @@ then
     read -p "Do You want install wpscan (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing wpscan now "
@@ -429,7 +416,6 @@ then
     read -p "Do You want install CRLFuzz (Y/n) " choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y )
         echo "Instaliing CRLFuzz now "
@@ -501,7 +487,6 @@ then
     read -p "Do You want install GoLinkFinder (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing GoLinkFinder now "
@@ -519,7 +504,6 @@ fi
  read -p "Do You want install knockpy (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y )
 
@@ -533,7 +517,6 @@ fi
       read -p "Do You want install XSStrike (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y )
      echo -e "installing XSStrike"
@@ -547,7 +530,6 @@ fi
         read -p "Do You want install Logsensor (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
      echo -e "installing Logsensor"
@@ -564,7 +546,6 @@ fi
  read -p "Do You want install Altdns (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
      echo -e "installing Altdns"
@@ -580,7 +561,6 @@ fi
      read -p "Do You want install xnLinkFinder (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git  &> /dev/null
@@ -593,7 +573,6 @@ fi
       read -p "Do You want install ParamSpider (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y )
     git clone https://github.com/devanshbatham/ParamSpider &> /dev/null
@@ -607,7 +586,6 @@ fi
      read -p "Do You want install NoSQLMap (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y |Y )
     git clone https://github.com/codingo/NoSQLMap.git &> /dev/null
@@ -621,7 +599,6 @@ fi
      read -p "Do You want install EyeWitness (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/FortyNorthSecurity/EyeWitness.git     &> /dev/null
@@ -635,7 +612,6 @@ fi
   read -p "Do You want install chameleon (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     curl -sL https://raw.githubusercontent.com/iustin24/chameleon/master/install.sh | bash
@@ -648,7 +624,6 @@ fi
  read -p "Do You want install GraphQLmap (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/swisskyrepo/GraphQLmap
@@ -662,7 +637,6 @@ fi
  read -p "Do You want install WhatWeb (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
      git clone https://github.com/urbanadventurer/WhatWeb.git
@@ -678,7 +652,6 @@ fi
 read -p "Do You want install http request smuggling (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/anshumanpattnaik/http-request-smuggling.git
@@ -693,7 +666,6 @@ read -p "Do You want install http request smuggling (Y/n) " choice
 read -p "Do You want install commix (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/commixproject/commix.git commix
@@ -706,7 +678,6 @@ read -p "Do You want install commix (Y/n) " choice
 read -p "Do You want install JWT_TOOL (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/ticarpi/jwt_tool
@@ -722,7 +693,6 @@ read -p "Do You want install JWT_TOOL (Y/n) " choice
 read -p "Do You want install Arjun (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/s0md3v/Arjun
@@ -735,7 +705,6 @@ read -p "Do You want install Arjun (Y/n) " choice
 read -p "Do You want install Gitleaks (Y/n) " choice
      case $choice in
      no | No | NO | n)
-     echo -e "skip"
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/zricethezav/gitleaks.git
