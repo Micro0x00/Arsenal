@@ -43,8 +43,8 @@ then
     # echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
     sudo apt-get remove -y golang-go &>/dev/null
     sudo rm -rf /usr/local/go &>/dev/null
-    wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz &>/dev/null
-    sudo tar -xvf go1.19.1.linux-amd64.tar.gz &>/dev/null
+    wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz &>/dev/null
+    sudo tar -xvf go1.20.1.linux-amd64.tar.gz &>/dev/null
     sudo mv go /usr/local
     #  sudo echo "export GOPATH=$HOME/go" >> /etc/profile
     #  sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
