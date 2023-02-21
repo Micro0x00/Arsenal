@@ -31,8 +31,10 @@ mkdir Arsenal &> /dev/null
 cd Arsenal
 echo "Check the requirements"
 sleep 2s
+
+requirements(){
 ## check go 
-go_v=$(go version) &>/dev/null
+go_v=$(go version) &> /dev/null
 if ! command -v go &> /dev/null
 then
     echo "go is not installed"
@@ -50,13 +52,16 @@ then
     awk 'BEGIN { print "export GOPATH=$HOME/go" >> "/etc/profile" }'
     awk 'BEGIN { print "export PATH=$PATH:/usr/local/go/bin" >> "/etc/profile" }'
     awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
-    echo "If you get this massege try to do . /etc/profile or source because you need to update your shell and run again "
     source /etc/profile #to update you shell dont worry
-    exit()
+
 else
 echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
 fi
-requirements(){
+if ! command -v go &> /dev/null
+
+    echo "If you get this massege do this commanad source /etc/profile because you need to update your shell and run again #golang is installed have a good day !"
+exit()
+fi
 apt-get install build-essential -y &> /dev/null # for azure
 #version
 git_v=$(git --version) &> /dev/null
