@@ -472,6 +472,8 @@ then
         echo "Instaliing uncover now "
         go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest &> /dev/null
         sudo cp $HOME/go/bin/uncover /usr/local/bin
+        echo "uncover has been installed"
+
         ;;
         esac
  #uncover
