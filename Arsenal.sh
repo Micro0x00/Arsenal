@@ -584,6 +584,23 @@ if ! command -v osmedeus &> /dev/null
 
 fi
 
+if ! command -v socialhunter -h &> /dev/null
+    then
+    read -p "Do You want install socialhunter (Y/n) :" choice
+     case $choice in
+     no | No | NO | n | N)
+     ;;
+     yes| YES | Yes | y | Y)
+     go install github.com/utkusen/socialhunter@latest
+     echo "socialhunter has been installed"
+;;
+     esac
+
+    else
+        echo "socialhunter is already installed"
+
+fi
+
 if ! command -v getJS &> /dev/null
     then
     read -p "Do You want install getJS (Y/n) :" choice
