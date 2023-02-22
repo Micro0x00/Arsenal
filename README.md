@@ -54,7 +54,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | GitLeaks | check git repos for secrets and keys |
 | WhatWeb | Next generation web scanner | 
 | Arjun | Arjun can find query parameters for URL endpoints. If you don't get what that means, it's okay, read along |
-| Sublert | is a security and reconnaissance tool that was written in Python to leverage certificate transparency for the sole purpose of monitoring new subdomains deployed by specific organizations and issued a TLS/SSL certificate. The tool is supposed to be scheduled to run periodically at fixed times, dates, or intervals (Ideally each day). New identified subdomains would be sent to Slack workspace with a notification push. Furthermore, the tool performs DNS resolution to determine working subdomains |
+| Hakrawler| Fast golang web crawler for gathering URLs and JavaScript file locations. This is basically a simple implementation of the awesome Gocolly library |
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
