@@ -59,6 +59,9 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | Katana | A next-generation crawling and spidering framework |
 | GetJS |getJS is a tool to extract all the javascript files from a set of given urls |
 | Gotator | Gotator is a tool to generate DNS wordlists through permutations |
+|Osemdeus |Osmedeus - A Workflow Engine for Offensive Security
+
+
 
 
 ----
