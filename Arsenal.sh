@@ -442,6 +442,24 @@ then
         ;;
         esac
 
+ if ! command -v katana -h &> /dev/null
+then
+    read -p "Do You want install katana (Y/n) :" choice
+    case $choice in
+        no | No | NO | n)
+        ;;
+        yes| YES | Yes | y |Y )
+        echo "Instaliing katana now "
+        go install github.com/projectdiscovery/katana/cmd/katana@latest &> /dev/null
+        sudo cp $HOME/go/bin/katana /usr/local/bin
+        ;;
+        esac
+ #uncover
+    else
+        echo "katana is already  installed"
+    fi
+
+
      if ! command -v uncover &> /dev/null
 then
     read -p "Do You want install uncover (Y/n) ?" choice
