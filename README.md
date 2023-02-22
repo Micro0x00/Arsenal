@@ -59,7 +59,8 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | Katana | A next-generation crawling and spidering framework |
 | GetJS |getJS is a tool to extract all the javascript files from a set of given urls |
 | Gotator | Gotator is a tool to generate DNS wordlists through permutations |
-|Osemdeus |Osmedeus - A Workflow Engine for Offensive Security
+| Osemdeus |Osmedeus - A Workflow Engine for Offensive Security | 
+| socialhunter | it's tool to test borken link hijaked Crawls the given URL and finds broken social media links that can be hijacked. Broken social links may allow an attacker to conduct phishing attacks. It also can cost a loss of the company's reputation. Broken social media hijack issues are usually accepted on the bug bounty programs. | 
 
 
 
