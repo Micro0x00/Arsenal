@@ -279,7 +279,7 @@ then
 fi
 if ! command -v gf &> /dev/null
 then
-    read -p "Do You want install gf (Y/n) ?" choice
+    read -p "Do You want install gf (Y/n) :" choice
     case $choice in
         no | No | NO | n)
         ;;
@@ -298,7 +298,7 @@ then
 fi
  if ! command -v meg &> /dev/null
 then
-    read -p "Do You want install meg (Y/n) ?" choice
+    read -p "Do You want install meg (Y/n) :" choice
     case $choice in
         no | No | NO | n)
         ;;
@@ -325,6 +325,7 @@ then
         echo "Instaliing waybackurls now "
         go install github.com/tomnomnom/waybackurls@latest &> /dev/null
         cp $HOME/go/bin/waybackurls /usr/local/bin
+        echo "waybackurls has been installed"
         ;;
         esac
 
