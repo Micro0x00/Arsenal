@@ -357,7 +357,7 @@ fi
     fi
 if ! command -v dnsx &> /dev/null
 then
-    read -p "Do You want install dnsx (Y/n) ?" choice
+    read -p "Do You want install dnsx (Y/n) : " choice
     case $choice in
         no | No | NO | n)
         ;;
