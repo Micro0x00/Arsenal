@@ -703,7 +703,7 @@ read -p "Do You want install Arjun (Y/n) " choice
     cd -
      ;;
      esac
-read -p "Do You want install Gitleaks (Y/n) " choice
+read -p "Do You want install Gitleaks (Y/n) :" choice
      case $choice in
      no | No | NO | n)
      ;;
@@ -715,6 +715,18 @@ read -p "Do You want install Gitleaks (Y/n) " choice
     cd -
      ;;
      esac
+     
+     read -p "Do You want install Hakrawler (Y/n) :" choice
+     case $choice in
+     no | No | NO | n)
+     ;;
+     yes| YES | Yes | y | Y)
+     go install github.com/hakluke/hakrawler@latest
+     cp $HOME/go/bin/hakrawler /usr/local/bin
+     ;;
+     esac
+     
+     
 }
 
 
