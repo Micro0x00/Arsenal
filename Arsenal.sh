@@ -330,8 +330,6 @@ then
 
     else
         echo "waybackurls is already installed"
-
-
 fi
 
     if ! command -v subzy &> /dev/null
@@ -432,7 +430,6 @@ then
     read -p "Do You want install dontgo403 (Y/n)" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing dontgo403 now "
@@ -450,7 +447,6 @@ then
     read -p "Do You want install uncover (Y/n) ?" choice
     case $choice in
         no | No | NO | n)
-        echo -e "skip"
         ;;
         yes| YES | Yes | y |Y )
         echo "Instaliing uncover now "
@@ -708,14 +704,15 @@ read -p "Do You want install Gitleaks (Y/n) :" choice
      no | No | NO | n)
      ;;
      yes| YES | Yes | y | Y)
-    git clone https://github.com/zricethezav/gitleaks.git
+    git clone https://github.com/zricethezav/gitleaks.git 
     cd gitleaks
     make build
     mv gitleaks /usr/local/bin
     cd -
      ;;
      esac
-     
+     if ! command -v hakrawler 
+     then 
      read -p "Do You want install Hakrawler (Y/n) :" choice
      case $choice in
      no | No | NO | n)
@@ -723,9 +720,14 @@ read -p "Do You want install Gitleaks (Y/n) :" choice
      yes| YES | Yes | y | Y)
      go install github.com/hakluke/hakrawler@latest
      cp $HOME/go/bin/hakrawler /usr/local/bin
+     echo "Hakrawler has been installed"
+     
+     else 
+             echo "hakrawler is already installed"
+
      ;;
      esac
-    
+  fi
      
  if ! command -v csprecon &> /dev/null
     then
@@ -735,7 +737,7 @@ read -p "Do You want install Gitleaks (Y/n) :" choice
      ;;
      yes| YES | Yes | y | Y)
      go install github.com/edoardottt/csprecon/cmd/csprecon@latest
-    
+    echo "csprecon has been installed"
 ;;
      esac
 
