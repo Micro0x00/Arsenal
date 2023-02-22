@@ -57,6 +57,10 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | Arjun | Arjun can find query parameters for URL endpoints. If you don't get what that means, it's okay, read along |
 | Hakrawler| Fast golang web crawler for gathering URLs and JavaScript file locations. This is basically a simple implementation of the awesome Gocolly library |
 | Katana | A next-generation crawling and spidering framework |
+| GetJS |getJS is a tool to extract all the javascript files from a set of given urls |
+| Gotator | Gotator is a tool to generate DNS wordlists through permutations |
+
+
 ----
 ## Requirements in Arsenal:heavy_check_mark:
 
