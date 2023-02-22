@@ -725,6 +725,25 @@ read -p "Do You want install Gitleaks (Y/n) :" choice
      cp $HOME/go/bin/hakrawler /usr/local/bin
      ;;
      esac
+    
+     
+ if ! command -v csprecon &> /dev/null
+    then
+    read -p "Do You want install csprecon (Y/n) :" choice
+     case $choice in
+     no | No | NO | n | N)
+     ;;
+     yes| YES | Yes | y | Y)
+     go install github.com/edoardottt/csprecon/cmd/csprecon@latest
+    
+;;
+     esac
+
+    else
+        echo "csprecon is already installed"
+
+
+fi
      
      
 }
