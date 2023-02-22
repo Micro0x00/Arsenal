@@ -646,9 +646,9 @@ fi
      ;;
      esac
 
-read -p "Do You want install http request smuggling (Y/n) " choice
+read -p "Do You want install http request smuggling (Y/n) : " choice
      case $choice in
-     no | No | NO | n)
+     no | No | NO | n | N)
      ;;
      yes| YES | Yes | y | Y)
     git clone https://github.com/anshumanpattnaik/http-request-smuggling.git
@@ -660,7 +660,7 @@ read -p "Do You want install http request smuggling (Y/n) " choice
      esac
 
 
-read -p "Do You want install commix (Y/n) " choice
+read -p "Do You want install commix (Y/n) : " choice
      case $choice in
      no | No | NO | n)
      ;;
@@ -672,7 +672,7 @@ read -p "Do You want install commix (Y/n) " choice
      ;;
      esac
 
-read -p "Do You want install JWT_TOOL (Y/n) " choice
+read -p "Do You want install JWT_TOOL (Y/n) : " choice
      case $choice in
      no | No | NO | n)
      ;;
@@ -687,7 +687,7 @@ read -p "Do You want install JWT_TOOL (Y/n) " choice
      esac
 
 
-read -p "Do You want install Arjun (Y/n) " choice
+read -p "Do You want install Arjun (Y/n) : " choice
      case $choice in
      no | No | NO | n)
      ;;
@@ -699,7 +699,7 @@ read -p "Do You want install Arjun (Y/n) " choice
     cd -
      ;;
      esac
-read -p "Do You want install Gitleaks (Y/n) :" choice
+read -p "Do You want install Gitleaks (Y/n) : " choice
      case $choice in
      no | No | NO | n)
      ;;
@@ -711,7 +711,7 @@ read -p "Do You want install Gitleaks (Y/n) :" choice
     cd -
      ;;
      esac
-     if ! command -v hakrawler 
+     if ! command -v hakrawler &> /dev/null
      then 
      read -p "Do You want install Hakrawler (Y/n) :" choice
      case $choice in
