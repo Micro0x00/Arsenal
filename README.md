@@ -52,6 +52,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | GoLinkFinder | A minimal JS endpoint extractor | 
 | JWT Toolkit v2 | JWT Tookkit is a toolkit for validating, forging, scanning and tampering JWTs (JSON Web Tokens) |
 | GitLeaks | check git repos for secrets and keys |
+| csprecon | Discover new target domains using Content Security Policy |
 | WhatWeb | Next generation web scanner | 
 | Arjun | Arjun can find query parameters for URL endpoints. If you don't get what that means, it's okay, read along |
 | Hakrawler| Fast golang web crawler for gathering URLs and JavaScript file locations. This is basically a simple implementation of the awesome Gocolly library |
