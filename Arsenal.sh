@@ -340,7 +340,7 @@ fi
             no | No | NO | n)
             ;;
             yes| YES | Yes | y| Y )
-            go get -u -v github.com/lukasikic/subzy &> /dev/null
+            go install -v github.com/LukaSikic/subzy@latest &> /dev/null
             echo "Instaliing subzy now "
 
             go install -v github.com/lukasikic/subzy@latest
