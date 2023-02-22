@@ -398,7 +398,7 @@ then
         ;;
         yes| YES | Yes | y | Y)
         echo "Instaliing wpscan now "
-        gem install wpscan
+        gem install wpscan &> /dev/null
         if command -v wpscan -h
         then
          echo "wpscan has been installed"
@@ -428,7 +428,7 @@ then
         echo " CRLFuzz has been installed"
     fi
 
-    read -p "Do You want install dontgo403 (Y/n)" choice
+    read -p "Do You want install dontgo403 (Y/n) : " choice
     case $choice in
         no | No | NO | n)
         ;;
@@ -453,6 +453,7 @@ then
         echo "Instaliing katana now "
         go install github.com/projectdiscovery/katana/cmd/katana@latest &> /dev/null
         sudo cp $HOME/go/bin/katana /usr/local/bin
+        echo "Katana has been installed"
         ;;
         esac
  #uncover
@@ -486,7 +487,7 @@ then
         ;;
         yes| YES | Yes | y | Y )
         echo "Instaliing Dalfox now "
-        go install github.com/hahwul/dalfox/v2@latest
+        go install github.com/hahwul/dalfox/v2@latest &> /dev/null
         cp $HOME/go/bin/dalfox /usr/local/bin
         echo "dalfox has been installed"
         ;;
@@ -523,7 +524,7 @@ fi
      no | No | NO | n)
      ;;
      yes| YES | Yes | y | Y )
-     go install github.com/hakluke/hakrawler@latest
+     go install github.com/hakluke/hakrawler@latest &> /dev/null
      cp $HOME/go/bin/hakrawler /usr/local/bin
      echo "Hakrawler has been installed"
      
@@ -541,7 +542,7 @@ fi
      no | No | NO | n | N)
      ;;
      yes| YES | Yes | y | Y)
-     go install github.com/edoardottt/csprecon/cmd/csprecon@latest
+     go install github.com/edoardottt/csprecon/cmd/csprecon@latest &> /dev/null
     echo "csprecon has been installed"
 ;;
      esac
@@ -592,7 +593,7 @@ if ! command -v socialhunter -h &> /dev/null
      no | No | NO | n | N)
      ;;
      yes| YES | Yes | y | Y)
-     go install github.com/utkusen/socialhunter@latest
+     go install github.com/utkusen/socialhunter@latest &> /dev/null
      echo "socialhunter has been installed"
 ;;
      esac
@@ -609,7 +610,7 @@ if ! command -v getJS &> /dev/null
      no | No | NO | n | N)
      ;;
      yes| YES | Yes | y | Y)
-    go install github.com/003random/getJS@latest
+    go install github.com/003random/getJS@latest &> /dev/null
     echo "getJS has been installed"
 ;;
      esac
