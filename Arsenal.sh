@@ -496,6 +496,40 @@ then
     else
         echo "GoLinkFinder is already installed"
 
+fi
+ if ! command -v hakrawler &> /dev/null
+     then 
+     read -p "Do You want install Hakrawler (Y/n) :" choice
+     case $choice in
+     no | No | NO | n)
+     ;;
+     yes| YES | Yes | y | Y)
+     go install github.com/hakluke/hakrawler@latest
+     cp $HOME/go/bin/hakrawler /usr/local/bin
+     echo "Hakrawler has been installed"
+     
+     else 
+             echo "hakrawler is already installed"
+
+     ;;
+     esac
+  fi
+     
+ if ! command -v csprecon &> /dev/null
+    then
+    read -p "Do You want install csprecon (Y/n) :" choice
+     case $choice in
+     no | No | NO | n | N)
+     ;;
+     yes| YES | Yes | y | Y)
+     go install github.com/edoardottt/csprecon/cmd/csprecon@latest
+    echo "csprecon has been installed"
+;;
+     esac
+
+    else
+        echo "csprecon is already installed"
+
 
 fi
  read -p "Do You want install knockpy (Y/n) " choice
@@ -711,41 +745,7 @@ read -p "Do You want install Gitleaks (Y/n) : " choice
     cd -
      ;;
      esac
-     if ! command -v hakrawler &> /dev/null
-     then 
-     read -p "Do You want install Hakrawler (Y/n) :" choice
-     case $choice in
-     no | No | NO | n)
-     ;;
-     yes| YES | Yes | y | Y)
-     go install github.com/hakluke/hakrawler@latest
-     cp $HOME/go/bin/hakrawler /usr/local/bin
-     echo "Hakrawler has been installed"
-     
-     else 
-             echo "hakrawler is already installed"
-
-     ;;
-     esac
-  fi
-     
- if ! command -v csprecon &> /dev/null
-    then
-    read -p "Do You want install csprecon (Y/n) :" choice
-     case $choice in
-     no | No | NO | n | N)
-     ;;
-     yes| YES | Yes | y | Y)
-     go install github.com/edoardottt/csprecon/cmd/csprecon@latest
-    echo "csprecon has been installed"
-;;
-     esac
-
-    else
-        echo "csprecon is already installed"
-
-
-fi
+    
      
      
 }
