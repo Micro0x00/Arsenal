@@ -1,5 +1,6 @@
-#!/bin/bash
-#color
+#!/bin/bash 
+
+#colors 
 END="\e[1m"
 Red="\e[31m"
 GREEN="\e[32m"
@@ -127,12 +128,9 @@ Tools(){
     if ! command -v httpx -h &> /dev/null
 then
         echo "installing httpx now"
-        if command -v httpx &> /dev/null
-        then
         go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
         echo "httpx has been installed "
-        fi
-                
+        
 
 
     else
@@ -141,37 +139,24 @@ fi
     # echo "Check if httprobe installed or not"
 if ! command -v httprobe &> /dev/null
     then
-    read -p "Do You want install httprobe (Y/n) : " choice
-    case $choice in
-    no | No | NO | n)
-    ;;
-    yes| YES | Yes | y | Y )
     echo "Instaliing httprobe now "
     go install github.com/tomnomnom/httprobe@latest
     sudo cp $HOME/go/bin/httprobe /usr/local/bin
     echo "httprobe has been installed"
 
-    ;;
-    esac
     else
     echo "httprobe is already installed"
 
     fi
-        # echo "Check if amass installed or not"
+
   if ! command -v amass &> /dev/null
     then
-    read -p "Do You want install ammas (Y/n) :" choice
-    case $choice in
-    no | No | NO | n)
-    ;;
-    yes| YES | Yes | y | Y)
+   
     go install -v github.com/OWASP/Amass/v3/...@master &> /dev/null
-        echo "Instaliing amass now "
+    echo "Instaliing amass now "
     sudo cp $HOME/go/bin/amass /usr/local/bin
-      echo "amass has been installed"
-    ;;
-    esac
-    else
+    echo "amass has been installed"
+else
    echo "amass is already installed"
 
     fi
@@ -195,18 +180,11 @@ if ! command -v httprobe &> /dev/null
  fi
  if ! command -v nuclei &> /dev/null
  then
- read -p "Do You want install nuclei (Y/n) : " choice
-    case $choice in
-    no | No | NO | n)
-    ;;
-    YES | Yes | y | yes | Y)
     echo "Instaliing nuclei now "
     go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest &> /dev/null
     sudo cp $HOME/go/bin/nuclei /usr/local/bin
-     echo "nuclei installation is done"
+    echo "nuclei installation is done"
 
-    ;;
-    esac
     else
        echo "nuclei is already installed"
 
