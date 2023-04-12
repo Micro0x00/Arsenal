@@ -126,22 +126,14 @@ Tools(){
     # echo "Check if httpx installed or not"
     if ! command -v httpx -h &> /dev/null
 then
-read -p "Do you want install httpx (Y/n) : " choice
-case $choice in
-
-  no | NO | n | No | N)
-  echo ""
-    ;;
-
-  yes | YES | Y | Yes | y)
         echo "installing httpx now"
         if command -v httpx &> /dev/null
         then
         go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
         echo "httpx has been installed "
         fi
-                ;;
-esac
+                
+
 
     else
         echo "httpx is already installed"
