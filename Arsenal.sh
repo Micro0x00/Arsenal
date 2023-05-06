@@ -29,7 +29,7 @@ ${Red}
 
 # creat a dir to your arsenal
 mkdir Arsenal &> /dev/null
-cd Arsenal || exit
+cd Arsenal 
 echo "Check the requirements"
 sleep 2s
 
@@ -119,7 +119,6 @@ then
 else
     echo -e "${YELLOW}Python is already install and your version is :${py_v:6}${END}"
 fi
-
 
 }
 #Tools Time
@@ -358,11 +357,11 @@ then
 
         echo "installing dontgo403 now "
         git clone https://github.com/devploit/dontgo403 &> /dev/null
-        cd dontgo403 || exit
+        cd dontgo403 
          go get
          go build
          echo "Try ./dontgo403 -h to run"
-         cd - || exit
+         cd - 
         
 
  if ! command -v katana -h &> /dev/null
@@ -511,13 +510,8 @@ fi
 
 echo "Time to some python Tools"
 sleep 3s
- read -p "Do You want install knockpy (Y/n) " choice
-     case $choice in
-     no | No | NO | n)
-     ;;
-     yes| YES | Yes | y | Y )
 
-     echo -e "installing knockpy"
+      echo -e "installing knockpy"
      git clone https://github.com/guelfoweb/knock.git  &> /dev/null
      cd knock || exit
      pip3 install -r requirements.txt
