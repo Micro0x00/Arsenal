@@ -100,7 +100,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 
 
 <h1 align="center">
-  <img src="https://i.imgur.com/jOqvicv.png" alt="arsenal" width="700" >
+  <img src="https://i.imgur.com/ZEGGucH.png" alt="arsenal" width="700" >
   <br>
 </h1>
 
