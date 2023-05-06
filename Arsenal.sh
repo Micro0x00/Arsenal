@@ -24,8 +24,8 @@ ${Red}
 ██║  ██║██║  ██║███████║███████╗██║ ╚████║██║  ██║███████╗
 ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ v1
                                  
-                                 twitter:Micro0x00
-                                 by @Mohamed Mater "
+                                 by @Mariam Shahin
+                                 by @Mohamed Mater  "
 
 # creat a dir to your arsenal
 mkdir Arsenal &> /dev/null
@@ -99,7 +99,7 @@ if ! command -v  rustc --version  &> /dev/null
 then
     echo "rust is not installed we will installed it for you now "
     echo "Installing rust"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &> /dev/null
     if command -v rustc --version &> /dev/null
     then
         echo "Rust has been installed"
@@ -126,7 +126,7 @@ fi
 Tools(){
     # echo "Check if httpx installed or not"
     if ! command -v httpx -h &> /dev/null
-then
+        then
         echo "installing httpx now"
         go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
         echo "httpx has been installed "
@@ -139,7 +139,7 @@ fi
     # echo "Check if httprobe installed or not"
 if ! command -v httprobe &> /dev/null
     then
-    echo "Instaliing httprobe now "
+    echo "installing httprobe now "
     go install github.com/tomnomnom/httprobe@latest
     sudo cp $HOME/go/bin/httprobe /usr/local/bin
     echo "httprobe has been installed"
@@ -151,9 +151,8 @@ if ! command -v httprobe &> /dev/null
 
   if ! command -v amass &> /dev/null
     then
-   
+    echo "Installing amass now "
     go install -v github.com/OWASP/Amass/v3/...@master &> /dev/null
-    echo "Instaliing amass now "
     sudo cp $HOME/go/bin/amass /usr/local/bin
     echo "amass has been installed"
 else
@@ -162,25 +161,19 @@ else
     fi
  if ! command -v gobuster &> /dev/null
     then
- read -p "Do You want install gobuster (Y/n) :" choice
-    case $choice in
-    no | No | NO | n | N)
-    ;;
-    yes| YES | Yes | y | Y)
-    echo "Instaliing gobuster now "
+    echo "Installing gobuster now "
     go install github.com/OJ/gobuster/v3@latest &> /dev/null
 
     sudo cp $HOME/go/bin/gobuster /usr/local/bin
     echo "GoBuster has been installed"
-    ;;
-    esac
+
     else
     echo "Gobuster is already installed"
 
  fi
  if ! command -v nuclei &> /dev/null
  then
-    echo "Instaliing nuclei now "
+    echo "Installing nuclei now "
     go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest &> /dev/null
     sudo cp $HOME/go/bin/nuclei /usr/local/bin
     echo "nuclei installation is done"
@@ -193,34 +186,22 @@ else
 
  if ! command -v subfinder &> /dev/null
 then
-    read -p "Do You want install subfinder (Y/n) : " choice
-    case $choice in
-        no | No | NO | n )
-        ;;
-        yes| YES | Yes | y | Y )
-        echo "Instaliing subfinder now "
+        echo "Installing subfinder now "
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest &> /dev/null
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
-        echo "subfinder installation is done"
-        ;;
-        esac
+        echo "subfinder installation is done"  
 
     else
     echo "subfinder is already installed"
 fi
     if ! command -v assetfinder &> /dev/null
 then
-    read -p "Do You want install assetfinder (Y/n) :" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
-        echo "Instaliing assetfinder now "
+
+        echo "installing assetfinder now "
         go install github.com/tomnomnom/assetfinder@latest &> /dev/null
         echo "assetfinder has been installed "
 
-        ;;
-        esac
+     
 
     else
         echo " assetfinder is installed"
@@ -229,18 +210,11 @@ then
 fi
     if ! command -v ffuf &> /dev/null
 then
-    read -p "Do You want install ffuf (Y/n) ? " choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y )
-        echo "Instaliing ffuf now "
+        echo "Installing ffuf now "
         go install github.com/ffuf/ffuf@latest
         cp $HOME/go/bin/ffuf /usr/local/bin
         echo "ffuf has been installed "
 
-        ;;
-        esac
 
     else
         echo "ffuf is already installed"
@@ -249,18 +223,10 @@ then
 fi
 if ! command -v gf &> /dev/null
 then
-    read -p "Do You want install gf (Y/n) :" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
-        echo "Instaliing gf now "
+        echo "installing gf now "
         go install github.com/tomnomnom/gf@latest &> /dev/null
         cp $HOME/go/bin/gf /usr/local/bin
         echo "gf has been installed"
-        ;;
-        esac
-
     else
         echo "gf is already installed"
 
@@ -268,17 +234,11 @@ then
 fi
  if ! command -v meg &> /dev/null
 then
-    read -p "Do You want install meg (Y/n) :" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
         echo "Instaliing meg now "
         go install github.com/tomnomnom/meg@latest &> /dev/null
         cp $HOME/go/bin/meg /usr/local/bin
         echo "meg has been installed"
-        ;;
-        esac
+
 
     else
         echo "meg is already installed"
@@ -287,17 +247,10 @@ then
 fi
 if ! command -v waybackurls &> /dev/null
 then
-    read -p "Do You want install waybackurls (Y/n) ?" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
-        echo "Instaliing waybackurls now "
+        echo "installing waybackurls now "
         go install github.com/tomnomnom/waybackurls@latest &> /dev/null
         cp $HOME/go/bin/waybackurls /usr/local/bin
         echo "waybackurls has been installed"
-        ;;
-        esac
 
     else
         echo "waybackurls is already installed"
@@ -305,20 +258,13 @@ fi
 
     if ! command -v subzy &> /dev/null
     then
-        read -p "Do You want install subzy (Y/n) ?" choice
-        case $choice in
-            no | No | NO | n)
-            ;;
-            yes| YES | Yes | y| Y )
+
             go install -v github.com/LukaSikic/subzy@latest &> /dev/null
-            echo "Instaliing subzy now "
-
-            go install -v github.com/lukasikic/subzy@latest
-
+            echo "installing subzy now "
             sudo cp $HOME/go/bin/subzy /usr/local/bin
             echo "subzy has been installed"
-            ;;
-            esac
+            
+            
 
     else
         echo "subzy already installed"
@@ -327,17 +273,10 @@ fi
     fi
 if ! command -v dnsx &> /dev/null
 then
-    read -p "Do You want install dnsx (Y/n) : " choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y |Y )
-        echo "Instaliing dnsx now "
+        echo "installing dnsx now "
         go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest &> /dev/null
         sudo cp $HOME/go/bin/dnsx /usr/local/bin
         echo "dnsx has been installed"
-        ;;
-        esac
 
     else
         echo "dnsx is already installed"
@@ -345,36 +284,26 @@ then
 fi
 if ! command -v gospider &> /dev/null
 then
-    read -p "Do You want install gospider (Y/n) ? " choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
-        echo "Instaliing gospider now "
+
+        echo "installing gospider now "
         go install github.com/jaeles-project/gospider@latest &> /dev/null
         sudo cp $HOME/go/bin/gospider /usr/local/bin
          echo "gospider has been installed"
-        ;;
-        esac
+     
 
     else
         echo " gospider is  already installed"
     fi
      if ! command -v wpscan &> /dev/null
 then
-    read -p "Do You want install wpscan (Y/n) ?" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
-        echo "Instaliing wpscan now "
+
+        echo "installing wpscan now "
         gem install wpscan &> /dev/null
         if command -v wpscan -h
         then
          echo "wpscan has been installed"
         fi
-        ;;
-        esac
+        
 
     else
         echo "wpscan already installed"
@@ -383,50 +312,35 @@ then
 fi
     if ! command -v CRLFuzz &> /dev/null
 then
-    read -p "Do You want install CRLFuzz (Y/n) " choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y )
-        echo "Instaliing CRLFuzz now "
+        echo "installing CRLFuzz now "
         go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest &> /dev/null
         sudo cp $HOME/go/bin/crlfuzz /usr/local/bin
-        ;;
-        esac
+        
  #CRLFuzz
     else
         echo " CRLFuzz has been installed"
     fi
 
-    read -p "Do You want install dontgo403 (Y/n) : " choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
-        echo "Instaliing dontgo403 now "
+
+        echo "installing dontgo403 now "
         git clone https://github.com/devploit/dontgo403 &> /dev/null
         cd dontgo403 || exit
          go get
          go build
          echo "Try ./dontgo403 -h to run"
          cd - || exit
-        ;;
-        esac
+        
 
  if ! command -v katana -h &> /dev/null
 then
-    read -p "Do You want install katana (Y/n) :" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y |Y )
-        echo "Instaliing katana now "
+ 
+        echo "installing katana now "
         go install github.com/projectdiscovery/katana/cmd/katana@latest &> /dev/null
         sudo cp $HOME/go/bin/katana /usr/local/bin
         echo "Katana has been installed"
-        ;;
-        esac
- #uncover
+        
+        
+
     else
         echo "katana is already  installed"
     fi
@@ -434,36 +348,26 @@ then
 
      if ! command -v uncover &> /dev/null
 then
-    read -p "Do You want install uncover (Y/n) ?" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y |Y )
-        echo "Instaliing uncover now "
+
+        echo "installing uncover now "
         go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest &> /dev/null
         sudo cp $HOME/go/bin/uncover /usr/local/bin
         echo "uncover has been installed"
 
-        ;;
-        esac
- #uncover
+        
+        
     else
         echo "uncover is already  installed"
     fi
 if ! command -v dalfox &> /dev/null
 then
-    read -p "Do You want install Dalfox (Y/n) ?" choice
-    case $choice in
-        no | No | NO | n)
-        echo -e "skip"
-        ;;
-        yes| YES | Yes | y | Y )
-        echo "Instaliing Dalfox now "
+ 
+        echo "installing Dalfox now "
         go install github.com/hahwul/dalfox/v2@latest &> /dev/null
         cp $HOME/go/bin/dalfox /usr/local/bin
         echo "dalfox has been installed"
-        ;;
-        esac
+        
+        
 
     else
         echo "dalfox is already installed"
@@ -478,12 +382,11 @@ then
         no | No | NO | n)
         ;;
         yes| YES | Yes | y | Y)
-        echo "Instaliing GoLinkFinder now "
+        echo "installing GoLinkFinder now "
         go install github.com/0xsha/GoLinkFinder@latest &> /dev/null
         cp $HOME/go/bin/GoLinkFinder /usr/local/bin
         echo "GoLinkFinder has been installed"
-        ;;
-        esac
+        
 
     else
         echo "GoLinkFinder is already installed"
@@ -500,8 +403,7 @@ fi
      cp $HOME/go/bin/hakrawler /usr/local/bin
      echo "Hakrawler has been installed"
      
-     ;;
-     esac
+     
      else 
              echo "hakrawler is already installed"
 
@@ -509,15 +411,10 @@ fi
      
  if ! command -v csprecon &> /dev/null
     then
-    read -p "Do You want install csprecon (Y/n) :" choice
-     case $choice in
-     no | No | NO | n | N)
-     ;;
-     yes| YES | Yes | y | Y)
+    
      go install github.com/edoardottt/csprecon/cmd/csprecon@latest &> /dev/null
     echo "csprecon has been installed"
-;;
-     esac
+     
 
     else
         echo "csprecon is already installed"
@@ -526,16 +423,10 @@ fi
 
 if ! command -v gotator &> /dev/null
     then
-    read -p "Do You want install gotator (Y/n) :" choice
-     case $choice in
-     no | No | NO | n | N)
-     ;;
-     yes| YES | Yes | y | Y)
-     `go env -w GO111MODULE="auto"`
+   
+    `go env -w GO111MODULE="auto"`
     go install github.com/Josue87/gotator@latest
     echo "gotator has been installed"
-;;
-     esac
 
     else
         echo "gotator is already installed"
@@ -543,15 +434,9 @@ if ! command -v gotator &> /dev/null
 fi
 if ! command -v osmedeus &> /dev/null
     then
-    read -p "Do You want install osmedeus (Y/n) :" choice
-     case $choice in
-     no | No | NO | n | N)
-     ;;
-     yes| YES | Yes | y | Y)
     go install -v github.com/j3ssie/osmedeus@latest
     echo "osmedeus has been installed"
-;;
-     esac
+     
 
     else
         echo "osmedeus is already installed"
@@ -560,15 +445,10 @@ fi
 
 if ! command -v socialhunter -h &> /dev/null
     then
-    read -p "Do You want install socialhunter (Y/n) :" choice
-     case $choice in
-     no | No | NO | n | N)
-     ;;
-     yes| YES | Yes | y | Y)
+
      go install github.com/utkusen/socialhunter@latest &> /dev/null
      echo "socialhunter has been installed"
-;;
-     esac
+     
 
     else
         echo "socialhunter is already installed"
@@ -577,20 +457,16 @@ fi
 
 if ! command -v getJS &> /dev/null
     then
-    read -p "Do You want install getJS (Y/n) :" choice
-     case $choice in
-     no | No | NO | n | N)
-     ;;
-     yes| YES | Yes | y | Y)
     go install github.com/003random/getJS@latest &> /dev/null
     echo "getJS has been installed"
-;;
-     esac
+
+     
 
     else
         echo "getJS is already installed"
 
 fi
+echo "Time to "
  read -p "Do You want install knockpy (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -603,7 +479,7 @@ fi
      pip3 install -r requirements.txt
      cd - || exit
      ;;
-     esac
+     
       read -p "Do You want install XSStrike (Y/n) " choice 
      case $choice in
      no | No | NO | n)
@@ -616,8 +492,8 @@ fi
      echo -e "Done"
      cd - &> /dev/null || exit
      ;;
-     esac
-        read -p "Do You want install Logsensor (Y/n) " choice
+     
+    read -p "Do You want install Logsensor (Y/n) " choice
      case $choice in
      no | No | NO | n)
      ;;
@@ -632,7 +508,7 @@ fi
     echo "Logsensor has been installed"
     cd - &> /dev/null || exit
      ;;
-     esac
+     
  read -p "Do You want install Altdns (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -647,7 +523,7 @@ fi
         cd - &> /dev/null || exit
 
      ;;
-     esac
+     
      read -p "Do You want install xnLinkFinder (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -659,7 +535,7 @@ fi
         echo "xnLinkFinder has been installed"
         cd - || exit
      ;;# اتقل بس والدنيا هتولع 
-    esac
+    
       read -p "Do You want install ParamSpider (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -672,7 +548,7 @@ fi
         echo "To use try python3 paramspider.py --domain target.com"
         cd - &> /dev/null || exit
      ;;
-     esac
+     
      read -p "Do You want install NoSQLMap (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -685,19 +561,9 @@ fi
         echo "NoSQLMap has been installed"
         cd - &> /dev/null || exit
      ;;
-     esac
-     read -p "Do You want install EyeWitness (Y/n) " choice
-     case $choice in
-     no | No | NO | n)
-     ;;
-     yes| YES | Yes | y | Y)
-    git clone https://github.com/FortyNorthSecurity/EyeWitness.git     &> /dev/null
-     ./EyeWitness/Python/setup/setup.sh
+     
 
-        echo "EyeWitness has been installed"
-        cd - &> /dev/null || exit
-     ;;
-     esac
+     
 
   read -p "Do You want install chameleon (Y/n) " choice
      case $choice in
@@ -709,7 +575,7 @@ fi
         echo "Chameleon has been installed"
         cd - || exit
      ;;
-     esac
+     
 
  read -p "Do You want install GraphQLmap (Y/n) " choice
      case $choice in
@@ -722,7 +588,7 @@ fi
         echo "GraphQLmap has been installed"
         cd - || exit
      ;;
-     esac
+     
 
  read -p "Do You want install WhatWeb (Y/n) " choice
      case $choice in
@@ -737,7 +603,7 @@ fi
     echo "WhatWeb has been installed"
     cd - || exit
      ;;
-     esac
+     
 
 read -p "Do You want install http request smuggling (Y/n) : " choice
      case $choice in
@@ -750,7 +616,7 @@ read -p "Do You want install http request smuggling (Y/n) : " choice
     echo "http request smuggling has been installed"
     cd - || exit
      ;;
-     esac
+     
 
 
 read -p "Do You want install commix (Y/n) : " choice
@@ -763,7 +629,7 @@ read -p "Do You want install commix (Y/n) : " choice
     echo "commix has been installed"
     cd - || exit
      ;;
-     esac
+     
 
 read -p "Do You want install JWT_TOOL (Y/n) : " choice
      case $choice in
@@ -777,7 +643,7 @@ read -p "Do You want install JWT_TOOL (Y/n) : " choice
     echo "JWT_TOOL has been installed"
     cd - || exit
      ;;
-     esac
+     
 
 
 read -p "Do You want install Arjun (Y/n) : " choice
@@ -791,7 +657,7 @@ read -p "Do You want install Arjun (Y/n) : " choice
     echo "Arjun has been installed"
     cd - || exit
      ;;
-     esac
+     
 read -p "Do You want install Gitleaks (Y/n) : " choice
      case $choice in
      no | No | NO | n)
@@ -803,9 +669,7 @@ read -p "Do You want install Gitleaks (Y/n) : " choice
     mv gitleaks /usr/local/bin
     cd - || exit
      ;;
-     esac
-    
-     
+         
      
 }
 
