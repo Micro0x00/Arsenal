@@ -512,9 +512,9 @@ echo "Time to some python Tools"
 sleep 3s
 
       echo -e "installing knockpy"
-     git clone https://github.com/guelfoweb/knock.git  &> /dev/null
+     git clone https://github.com/guelfoweb/knock.git &> /dev/null
      cd knock || exit
-     pip3 install -r requirements.txt
+     pip3 install -r requirements.txt &> /dev/null
      cd - || exit
      
     read -p "Do You want install XSStrike (Y/n) " choice 
