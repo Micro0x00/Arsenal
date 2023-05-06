@@ -63,7 +63,7 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | socialhunter | it's tool to test borken link hijaked Crawls the given URL and finds broken social media links that can be hijacked. Broken social links may allow an attacker to conduct phishing attacks. It also can cost a loss of the company's reputation. Broken social media hijack issues are usually accepted on the bug bounty programs. | 
 | mapCIDR | mapCIDR is developed to ease load distribution for mass scanning operations, it can be used both as a library and as independent CLI tool. |
 | shuffleDNS | shuffleDNS is a wrapper around massdns, written in go, that allows you to enumerate valid subdomains using active bruteforce, as well as resolve subdomains with wildcard handling and easy input-output support. | 
-
+| jsleak | ommand-line tool designed to uncover secrets and links in JavaScript files or source code. The jsleak was inspired by Linkfinder and regexes are collected from multiple sources.|
 
 
 ----
