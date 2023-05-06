@@ -508,7 +508,7 @@ if ! command -v getJS &> /dev/null
 
 fi
 
-echo "Time to some python Tools"
+echo "Time to install some python Tools"
 sleep 3s
 
       echo -e "installing knockpy"
