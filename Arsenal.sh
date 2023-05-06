@@ -532,9 +532,11 @@ sleep 3s
      git clone https://github.com/s0md3v/XSStrike &> /dev/null
      cd XSStrike || exit
      pip3 install -r requirements.txt
-     echo -e "Done"
+     echo -e "XSStrike has been installed"
+           ;;
+        esac
      cd - &> /dev/null || exit
-     
+  
     read -p "Do You want install Logsensor (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -548,6 +550,8 @@ sleep 3s
     pip install -r requirements.txt
     ./install.sh &> /dev/null
     echo "Logsensor has been installed"
+          ;;
+        esac
     cd - &> /dev/null || exit
      
  read -p "Do You want install Altdns (Y/n) " choice
@@ -561,6 +565,8 @@ sleep 3s
         pip3 install -r requirements.txt
         echo "Altdns has been installed"
         echo "to run try python3 altdns --help"
+              ;;
+        esac
         cd - &> /dev/null || exit
 
      
@@ -574,6 +580,8 @@ sleep 3s
     cd xnLinkFinder || exit
     python3 setup.py install
         echo "xnLinkFinder has been installed"
+        ;;
+        esac
         cd - || exit
     
       read -p "Do You want install ParamSpider (Y/n) " choice
@@ -586,6 +594,8 @@ sleep 3s
     pip3 install -r requirements.txt
         echo "ParamSpider has been installed"
         echo "To use try python3 paramspider.py --domain target.com"
+           ;;
+        esac
         cd - &> /dev/null || exit
      
      read -p "Do You want install NoSQLMap (Y/n) " choice
@@ -598,6 +608,8 @@ sleep 3s
     python3 setup.py install /dev/null
 
         echo "NoSQLMap has been installed"
+              ;;
+        esac
         cd - &> /dev/null || exit
      
 
@@ -611,6 +623,8 @@ sleep 3s
     curl -sL https://raw.githubusercontent.com/iustin24/chameleon/master/install.sh | bash
 
         echo "Chameleon has been installed"
+             ;;
+        esac
         cd - || exit
      
      
@@ -624,6 +638,8 @@ sleep 3s
     cd GraphQLmap/ || exit
     python3 setup.py install
         echo "GraphQLmap has been installed"
+            ;;
+        esac
         cd - || exit
      
 
@@ -638,6 +654,8 @@ sleep 3s
     bundle update
     bundle install
     echo "WhatWeb has been installed"
+         ;;
+        esac
     cd - || exit
      
 
@@ -650,8 +668,10 @@ read -p "Do You want install http request smuggling (Y/n) : " choice
     cd http-request-smuggling || exit
     pip3 install -r requirements.txt
     echo "http request smuggling has been installed"
+          ;;
+        esac
     cd - || exit
-     ;;
+    
      
 
 
@@ -663,8 +683,10 @@ read -p "Do You want install commix (Y/n) : " choice
     git clone https://github.com/commixproject/commix.git commix
     cd commix || exit
     echo "commix has been installed"
+          ;;
+        esac
     cd - || exit
-     ;;
+    
      
 
 read -p "Do You want install JWT_TOOL (Y/n) : " choice
@@ -677,8 +699,10 @@ read -p "Do You want install JWT_TOOL (Y/n) : " choice
     python3 -m pip install termcolor cprint pycryptodomex requests
     chmod +x jwt_tool.py
     echo "JWT_TOOL has been installed"
+          ;;
+        esac
     cd - || exit
-     ;;
+    
      
 
 
@@ -691,8 +715,10 @@ read -p "Do You want install Arjun (Y/n) : " choice
     cd Arjun || exit
     python3 setup.py install    
     echo "Arjun has been installed"
+          ;;
+        esac
     cd - || exit
-     ;;
+    
      
 read -p "Do You want install Gitleaks (Y/n) : " choice
      case $choice in
@@ -703,8 +729,10 @@ read -p "Do You want install Gitleaks (Y/n) : " choice
     cd gitleaks || exit
     make build
     mv gitleaks /usr/local/bin
+          ;;
+        esac
     cd - || exit
-     ;;
+    
          
      
 }
