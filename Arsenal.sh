@@ -22,7 +22,7 @@ ${Red}
 ███████║██████╔╝███████╗█████╗  ██╔██╗ ██║███████║██║
 ██╔══██║██╔══██╗╚════██║██╔══╝  ██║╚██╗██║██╔══██║██║
 ██║  ██║██║  ██║███████║███████╗██║ ╚████║██║  ██║███████╗
-╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ v1
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ v2
                                  
                                  by @Mariam Shahin
                                  by @Mohamed Mater  "
@@ -56,7 +56,7 @@ then
     source /etc/profile #to update you shell dont worry
 
 else
-echo -e "${Cyan}Go is already installed and your version is:${go_v:12}${END}"
+echo -e "${Cyan}Go is already installed and your version is: ${go_v:13}${END}"
 fi
 if ! command -v go &> /dev/null
 then
