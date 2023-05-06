@@ -64,6 +64,8 @@ Arsenal is a Simple shell script (Bash) used to install the most important tools
 | mapCIDR | mapCIDR is developed to ease load distribution for mass scanning operations, it can be used both as a library and as independent CLI tool. |
 | shuffleDNS | shuffleDNS is a wrapper around massdns, written in go, that allows you to enumerate valid subdomains using active bruteforce, as well as resolve subdomains with wildcard handling and easy input-output support. | 
 | jsleak | ommand-line tool designed to uncover secrets and links in JavaScript files or source code. The jsleak was inspired by Linkfinder and regexes are collected from multiple sources.|
+| asnmap | Go CLI and Library for quickly mapping organization network ranges using ASN information.|
+
 
 
 ----
