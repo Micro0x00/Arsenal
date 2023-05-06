@@ -522,7 +522,6 @@ sleep 3s
      cd knock || exit
      pip3 install -r requirements.txt
      cd - || exit
-     ;;
      
     read -p "Do You want install XSStrike (Y/n) " choice 
      case $choice in
@@ -535,7 +534,6 @@ sleep 3s
      pip3 install -r requirements.txt
      echo -e "Done"
      cd - &> /dev/null || exit
-     ;;
      
     read -p "Do You want install Logsensor (Y/n) " choice
      case $choice in
@@ -551,7 +549,6 @@ sleep 3s
     ./install.sh &> /dev/null
     echo "Logsensor has been installed"
     cd - &> /dev/null || exit
-     ;;
      
  read -p "Do You want install Altdns (Y/n) " choice
      case $choice in
@@ -566,7 +563,7 @@ sleep 3s
         echo "to run try python3 altdns --help"
         cd - &> /dev/null || exit
 
-     ;;
+     
      
      read -p "Do You want install xnLinkFinder (Y/n) " choice
      case $choice in
@@ -578,7 +575,6 @@ sleep 3s
     python3 setup.py install
         echo "xnLinkFinder has been installed"
         cd - || exit
-     ;;# اتقل بس والدنيا هتولع 
     
       read -p "Do You want install ParamSpider (Y/n) " choice
      case $choice in
@@ -591,7 +587,6 @@ sleep 3s
         echo "ParamSpider has been installed"
         echo "To use try python3 paramspider.py --domain target.com"
         cd - &> /dev/null || exit
-     ;;
      
      read -p "Do You want install NoSQLMap (Y/n) " choice
      case $choice in
@@ -604,7 +599,6 @@ sleep 3s
 
         echo "NoSQLMap has been installed"
         cd - &> /dev/null || exit
-     ;;
      
 
      
@@ -618,7 +612,7 @@ sleep 3s
 
         echo "Chameleon has been installed"
         cd - || exit
-     ;;
+     
      
 
  read -p "Do You want install GraphQLmap (Y/n) " choice
@@ -631,7 +625,6 @@ sleep 3s
     python3 setup.py install
         echo "GraphQLmap has been installed"
         cd - || exit
-     ;;
      
 
  read -p "Do You want install WhatWeb (Y/n) " choice
@@ -646,7 +639,6 @@ sleep 3s
     bundle install
     echo "WhatWeb has been installed"
     cd - || exit
-     ;;
      
 
 read -p "Do You want install http request smuggling (Y/n) : " choice
