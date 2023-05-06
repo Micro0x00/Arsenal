@@ -56,7 +56,7 @@ then
     source /etc/profile #to update you shell dont worry
 
 else
-echo -e "${Cyan}Go is already installed and your version is:${go_v:13}${END}"
+echo -e "${Cyan}Go is already installed and your version is:${go_v:12}${END}"
 fi
 if ! command -v go &> /dev/null
 then
@@ -325,7 +325,7 @@ then
      
 
     else
-        echo " gospider is  already installed"
+        echo "gospider is  already installed"
     fi
      if ! command -v wpscan &> /dev/null
 then
@@ -360,8 +360,8 @@ then
         cd dontgo403 
          go get
          go build
-         echo "Try ./dontgo403 -h to run"
-         cd - 
+         echo " Try ./dontgo403 -h to run "
+         cd - &> /dev/null
         
 
  if ! command -v katana -h &> /dev/null
