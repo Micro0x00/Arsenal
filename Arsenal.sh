@@ -271,6 +271,40 @@ fi
 
 
     fi
+if ! command -v asnmap -h &> /dev/null
+then
+        echo "installing asnmap now "
+        go install github.com/projectdiscovery/asnmap/cmd/asnmap@latest &> /dev/null
+        echo "asnmap has been installed"
+
+    else
+        echo "asnmap is already installed"
+
+fi
+
+if ! command -v jsleak -h &> /dev/null
+then
+        echo "installing jsleak now "
+        go install github.com/channyein1337/jsleak@latest &> /dev/null
+        echo "jsleak has been installed"
+
+    else
+        echo "jsleak is already installed"
+
+fi
+
+
+if ! command -v mapcidr -h &> /dev/null
+then
+        echo "installing mapcidr now "
+        go install -v github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest &> /dev/null
+        echo "mapcidr has been installed"
+
+    else
+        echo "mapcidr is already installed"
+
+fi
+
 if ! command -v dnsx &> /dev/null
 then
         echo "installing dnsx now "
@@ -367,8 +401,6 @@ then
         cp $HOME/go/bin/dalfox /usr/local/bin
         echo "dalfox has been installed"
         
-        
-
     else
         echo "dalfox is already installed"
 
@@ -377,11 +409,7 @@ fi
 
 if ! command -v GoLinkFinder &> /dev/null
 then
-    read -p "Do You want install GoLinkFinder (Y/n) ?" choice
-    case $choice in
-        no | No | NO | n)
-        ;;
-        yes| YES | Yes | y | Y)
+        
         echo "installing GoLinkFinder now "
         go install github.com/0xsha/GoLinkFinder@latest &> /dev/null
         cp $HOME/go/bin/GoLinkFinder /usr/local/bin
@@ -394,11 +422,8 @@ then
 fi
  if ! command -v hakrawler &> /dev/null
      then 
-     read -p "Do You want install Hakrawler (Y/n) :" choice
-     case $choice in
-     no | No | NO | n)
-     ;;
-     yes| YES | Yes | y | Y )
+    echo "installing hakrawler now "
+
      go install github.com/hakluke/hakrawler@latest &> /dev/null
      cp $HOME/go/bin/hakrawler /usr/local/bin
      echo "Hakrawler has been installed"
@@ -411,9 +436,10 @@ fi
      
  if ! command -v csprecon &> /dev/null
     then
-    
+    echo "installing csprecon now "
+
      go install github.com/edoardottt/csprecon/cmd/csprecon@latest &> /dev/null
-    echo "csprecon has been installed"
+     echo "csprecon has been installed"
      
 
     else
@@ -423,7 +449,8 @@ fi
 
 if ! command -v gotator &> /dev/null
     then
-   
+    echo "installing gotator now "
+
     `go env -w GO111MODULE="auto"`
     go install github.com/Josue87/gotator@latest
     echo "gotator has been installed"
@@ -434,12 +461,26 @@ if ! command -v gotator &> /dev/null
 fi
 if ! command -v osmedeus &> /dev/null
     then
+    echo "installing osmedeus now "
+
     go install -v github.com/j3ssie/osmedeus@latest
     echo "osmedeus has been installed"
      
 
     else
         echo "osmedeus is already installed"
+
+fi
+
+if ! command -v shuffledns &> /dev/null
+    then
+    echo "Installing shuffledns Now"
+     go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest  &> /dev/null
+     echo "shuffledns has been installed"
+     
+
+    else
+        echo "shuffledns is already installed"
 
 fi
 
@@ -457,6 +498,7 @@ fi
 
 if ! command -v getJS &> /dev/null
     then
+    echo "installing getJS"
     go install github.com/003random/getJS@latest &> /dev/null
     echo "getJS has been installed"
 
@@ -466,7 +508,9 @@ if ! command -v getJS &> /dev/null
         echo "getJS is already installed"
 
 fi
-echo "Time to "
+
+echo "Time to some python Tools"
+sleep 3s
  read -p "Do You want install knockpy (Y/n) " choice
      case $choice in
      no | No | NO | n)
@@ -480,7 +524,7 @@ echo "Time to "
      cd - || exit
      ;;
      
-      read -p "Do You want install XSStrike (Y/n) " choice 
+    read -p "Do You want install XSStrike (Y/n) " choice 
      case $choice in
      no | No | NO | n)
      ;;
