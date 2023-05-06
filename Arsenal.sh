@@ -203,7 +203,7 @@ then
      
 
     else
-        echo " assetfinder is installed"
+        echo "assetfinder is installed"
 
 
 fi
