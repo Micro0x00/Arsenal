@@ -358,8 +358,8 @@ then
         echo "installing dontgo403 now "
         git clone https://github.com/devploit/dontgo403 &> /dev/null
         cd dontgo403 
-         go get
-         go build
+         go get &> /dev/null
+         go build &> /dev/null
          echo " Try ./dontgo403 -h to run "
          cd - &> /dev/null
         
@@ -451,7 +451,7 @@ if ! command -v gotator &> /dev/null
     echo "installing gotator now "
 
     `go env -w GO111MODULE="auto"`
-    go install github.com/Josue87/gotator@latest
+    go install github.com/Josue87/gotator@latest &> /dev/null
     echo "gotator has been installed"
 
     else
@@ -462,7 +462,7 @@ if ! command -v osmedeus &> /dev/null
     then
     echo "installing osmedeus now "
 
-    go install -v github.com/j3ssie/osmedeus@latest
+    go install -v github.com/j3ssie/osmedeus@latest &> /dev/null
     echo "osmedeus has been installed"
      
 
