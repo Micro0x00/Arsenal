@@ -34,92 +34,46 @@ echo "Check the requirements"
 sleep 2s
 
 requirements(){
-## check go 
-go_v=$(go version) &> /dev/null
-if ! command -v go &> /dev/null
-then
-    echo "go is not installed"
-    echo "installing go now "
-    # echo "Check this "
-    # echo "https://github.com/Micro0x00/Arsenal/blob/main/README.md#go-lang-installation"
-    sudo apt-get remove -y golang-go &>/dev/null
-    sudo rm -rf /usr/local/go &>/dev/null
-    wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz &>/dev/null
-    sudo tar -xvf go1.20.1.linux-amd64.tar.gz &>/dev/null
-    sudo mv go /usr/local
-    #  sudo echo "export GOPATH=$HOME/go" >> /etc/profile
-    #  sudo echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
-    #  sudo echo "export PATH=$PATH:$GOPATH/bin" >> /etc/profile
-    awk 'BEGIN { print "export GOPATH=$HOME/go" >> "/etc/profile" }'
-    awk 'BEGIN { print "export PATH=$PATH:/usr/local/go/bin" >> "/etc/profile" }'
-    awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
-    source /etc/profile #to update you shell dont worry
+    # check go 
+    go_v=$(go version) 2> /dev/null
+    if ! command -v go &> /dev/null
+    then
+        echo "go is not installed"
+        echo "installing go now "
+        sudo apt-get remove -y golang-go &>/dev/null
+        sudo rm -rf /usr/local/go &>/dev/null
+        wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz &>/dev/null
+        sudo tar -xvf go1.20.1.linux-amd64.tar.gz -C /usr/local/ &>/dev/null
+        awk 'BEGIN { print "export GOPATH=$HOME/go" >> "/etc/profile" }'
+        awk 'BEGIN { print "export PATH=$PATH:/usr/local/go/bin" >> "/etc/profile" }'
+        awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
+        source /etc/profile #to update you shell dont worry
+    else
+        echo -e "${Cyan}Go is already installed and your version is: ${go_v:13}${END}"
+    fi
+    if ! command -v go &> /dev/null
+    then
+        echo "If you get this messsage, run 'source /etc/profile' to update your shell and run again. #golang is installed, have a good day!"
+        exit
+    fi
+    apt-get install build-essential -y &> /dev/null
 
-else
-echo -e "${Cyan}Go is already installed and your version is: ${go_v:13}${END}"
-fi
-if ! command -v go &> /dev/null
-then
-    echo "If you get this massege do this commanad source /etc/profile because you need to update your shell and run again #golang is installed have a good day !"
-    exit
-fi
-apt-get install build-essential -y &> /dev/null # for azure
-#version
-git_v=$(git --version) &> /dev/null
-py_v=$(python3 --version) &> /dev/null
-ruby_v=$(ruby -v) &> /dev/null
-rust_v=$(rustc --version) &> /dev/null
-
-# Check For The requirements
-if ! command -v git &> /dev/null
-then
-    echo "Git is not installed, we will install it for you now"
-    echo "Installing Git"
-    apt-get install git -y &> /dev/null
-    if command -v git &> /dev/null
+    # Check For The requirements
+    if ! command -v git ruby rustc python3 &> /dev/null
     then
-        echo "git has been installed"
+        echo "Git, Ruby, Rust, or Python is not installed. We will install them for you now."
+        echo "Installing Git"
+        apt-get install git -y &> /dev/null
+        echo "Installing Ruby"
+        apt-get install ruby-full -y &
+        echo "Installing Rust"
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &> /dev/null
+        echo "Installing Python"
+        apt-get install python3 -y &> /dev/null
+        apt-get install python3-pip -y &> /dev/null
+    else
+        echo -e "${BOLDGREEN}All requirements are already installed.${END}"
     fi
-else
-    echo -e "${BOLDGREEN}Git is already installed and your version is:${git_v:11}${END}"
-fi
-if ! command -v ruby -v &> /dev/null
-then
-    echo "ruby is not installed we will installed it for you now "
-    echo "Installing ruby"
-    apt-get install ruby-full -y
-    if command -v ruby -v &> /dev/null
-    then
-        echo "Ruby has been installed"
-    fi
-else
-    echo -e "${Red}Ruby is already installed and your version is: ${ruby_v:5:5}${END}"
-fi
-if ! command -v  rustc --version  &> /dev/null
-then
-    echo "rust is not installed we will installed it for you now "
-    echo "Installing rust"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &> /dev/null
-    if command -v rustc --version &> /dev/null
-    then
-        echo "Rust has been installed"
-    fi
-else
-    echo -e "${white}Rust is already install and your version is: ${rust_v:5:8}${END}"
-fi
-if ! command -v python3 &> /dev/null
-then
-    echo "python is not installed we will installed it for you now "
-    apt-get install python3 -y &> /dev/null
-    apt install python3-pip -y &> /dev/null
-    if command -v python3 &> /dev/null
-    then
-        echo "DONE"
-    fi
-else
-    echo -e "${YELLOW}Python is already install and your version is :${py_v:6}${END}"
-fi
-
 }
 #Tools Time
 Tools(){
