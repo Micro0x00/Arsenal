@@ -1,4 +1,4 @@
-# Arsenal:rocket:
+# Arsenal
 <h1 align="center">
   <img src="https://i.imgur.com/0sx9YWQ.jpg" alt="subfinder" width="500" >
   <br>
