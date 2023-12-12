@@ -24,8 +24,7 @@ ${Red}
 ██║  ██║██║  ██║███████║███████╗██║ ╚████║██║  ██║███████╗
 ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ v2
                                  
-                                 by @Mariam Shahin
-                                 by @Mohamed Mater  "
+ "
 
 # creat a dir to your arsenal
 mkdir Arsenal &> /dev/null
