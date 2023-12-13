@@ -29,9 +29,6 @@ ${Red}
 # creat a dir to your arsenal
 mkdir Arsenal &> /dev/null
 cd Arsenal 
-echo "Check the requirements"
-sleep 2s
-
 requirements(){
     # check go 
     go_v=$(go version) 2> /dev/null
@@ -39,13 +36,13 @@ requirements(){
     then
         echo "go is not installed"
         echo "installing go now "
-        sudo apt-get remove -y golang-go &>/dev/null
+        sudo apt remove -y golang-go &>/dev/null
         sudo rm -rf /usr/local/go &>/dev/null
         wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz &>/dev/null
         sudo tar -xvf go1.20.1.linux-amd64.tar.gz -C /usr/local/ &>/dev/null
-        awk 'BEGIN { print "export GOPATH=$HOME/go" >> "/etc/profile" }'
-        awk 'BEGIN { print "export PATH=$PATH:/usr/local/go/bin" >> "/etc/profile" }'
-        awk 'BEGIN { print " export PATH=$PATH:$GOPATH/bin" >> "/etc/profile" }'
+        export GOPATH=$HOME/go
+        export PATH=$PATH:/usr/local/go/bin
+        export PATH=$PATH:$GOPATH/bin
         source /etc/profile #to update you shell dont worry
     else
         echo -e "${Cyan}Go is already installed and your version is: ${go_v:13}${END}"
@@ -55,21 +52,21 @@ requirements(){
         echo "If you get this messsage, run 'source /etc/profile' to update your shell and run again. #golang is installed, have a good day!"
         exit
     fi
-    apt-get install build-essential -y &> /dev/null
+    apt install build-essential -y &> /dev/null
 
     # Check For The requirements
     if ! command -v git ruby rustc python3 &> /dev/null
     then
         echo "Git, Ruby, Rust, or Python is not installed. We will install them for you now."
         echo "Installing Git"
-        apt-get install git -y &> /dev/null
+        apt install git -y &> /dev/null
         echo "Installing Ruby"
-        apt-get install ruby-full -y &
+        apt install ruby-full -y &
         echo "Installing Rust"
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &> /dev/null
         echo "Installing Python"
-        apt-get install python3 -y &> /dev/null
-        apt-get install python3-pip -y &> /dev/null
+        apt install python3 -y &> /dev/null
+        apt install python3-pip -y &> /dev/null
     else
         echo -e "${BOLDGREEN}All requirements are already installed.${END}"
     fi
