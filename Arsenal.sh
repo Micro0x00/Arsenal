@@ -453,7 +453,7 @@ sleep 3s
      git clone https://github.com/guelfoweb/knock.git &> /dev/null
      cd knock || exit
      pip3 install -r requirements.txt &> /dev/null
-     cd - || exit
+     cd -
      
     read -p "Do You want install XSStrike (Y/n) " choice 
      case $choice in
@@ -467,7 +467,7 @@ sleep 3s
      echo -e "XSStrike has been installed"
            ;;
         esac
-     cd - &> /dev/null || exit
+     cd - &> /dev/null 
   
     read -p "Do You want install Logsensor (Y/n) " choice
      case $choice in
@@ -476,7 +476,7 @@ sleep 3s
      yes| YES | Yes | y | Y)
      echo -e "installing Logsensor"
      git clone https://github.com/Mr-Robert0/Logsensor.git &> /dev/null
-    cd Logsensor || exit
+    cd Logsensor
     chmod +x logsensor.py
     chmod +x install.sh
     pip install -r requirements.txt
@@ -528,7 +528,7 @@ sleep 3s
         echo "To use try python3 paramspider.py --domain target.com"
            ;;
         esac
-        cd - &> /dev/null || exit
+        cd - &> /dev/null 
      
      read -p "Do You want install NoSQLMap (Y/n) " choice
      case $choice in
@@ -536,7 +536,7 @@ sleep 3s
      ;;
      yes| YES | Yes | y |Y )
     git clone https://github.com/codingo/NoSQLMap.git &> /dev/null
-    cd NoSQLMap || exit
+    cd NoSQLMap 
     python3 setup.py install /dev/null
 
         echo "NoSQLMap has been installed"
@@ -557,7 +557,7 @@ sleep 3s
         echo "Chameleon has been installed"
              ;;
         esac
-        cd - || exit
+        cd -
      
      
 
@@ -572,7 +572,7 @@ sleep 3s
         echo "GraphQLmap has been installed"
             ;;
         esac
-        cd - || exit
+        cd - 
      
 
  read -p "Do You want install WhatWeb (Y/n) " choice
@@ -581,14 +581,14 @@ sleep 3s
      ;;
      yes| YES | Yes | y | Y)
      git clone https://github.com/urbanadventurer/WhatWeb.git
-    cd WhatWeb/ || exit
+    cd WhatWeb/ 
     gem install bundler
     bundle update
     bundle install
     echo "WhatWeb has been installed"
          ;;
         esac
-    cd - || exit
+    cd -
      
 
 read -p "Do You want install http request smuggling (Y/n) : " choice
@@ -602,7 +602,7 @@ read -p "Do You want install http request smuggling (Y/n) : " choice
     echo "http request smuggling has been installed"
           ;;
         esac
-    cd - || exit
+    cd -
     
      
 
@@ -617,7 +617,7 @@ read -p "Do You want install commix (Y/n) : " choice
     echo "commix has been installed"
           ;;
         esac
-    cd - || exit
+    cd - 
     
      
 
@@ -633,7 +633,7 @@ read -p "Do You want install JWT_TOOL (Y/n) : " choice
     echo "JWT_TOOL has been installed"
           ;;
         esac
-    cd - || exit
+    cd -
     
      
 
@@ -649,7 +649,7 @@ read -p "Do You want install Arjun (Y/n) : " choice
     echo "Arjun has been installed"
           ;;
         esac
-    cd - || exit
+    cd -
     
      
 read -p "Do You want install Gitleaks (Y/n) : " choice
