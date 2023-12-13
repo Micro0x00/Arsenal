@@ -49,7 +49,7 @@ requirements(){
     fi
     if ! command -v go &> /dev/null
     then
-        echo "If you get this messsage, run 'source /etc/profile' to update your shell and run again. #golang is installed, have a good day!"
+        echo "If you get this message, run 'source /etc/profile' to update your shell and run again. #golang is installed, have a good day!"
         exit
     fi
     apt install build-essential -y &> /dev/null
@@ -73,133 +73,121 @@ requirements(){
 }
 #Tools Time
 Tools(){
-    # echo "Check if httpx installed or not"
+    # Check if httpx installed or not
     if ! command -v httpx -h &> /dev/null
-        then
+    then
         echo "installing httpx now"
         go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
-        echo "httpx has been installed "
-        
-
-
+        echo "httpx has been installed"
     else
         echo "httpx is already installed"
-fi
-    # echo "Check if httprobe installed or not"
-if ! command -v httprobe &> /dev/null
-    then
-    echo "installing httprobe now "
-    go install github.com/tomnomnom/httprobe@latest
-    sudo cp $HOME/go/bin/httprobe /usr/local/bin
-    echo "httprobe has been installed"
-
-    else
-    echo "httprobe is already installed"
-
     fi
 
-  if ! command -v amass &> /dev/null
+    # Check if httprobe installed or not
+    if ! command -v httprobe &> /dev/null
     then
-    echo "Installing amass now "
-    go install -v github.com/OWASP/Amass/v3/...@master &> /dev/null
-    sudo cp $HOME/go/bin/amass /usr/local/bin
-    echo "amass has been installed"
-else
-   echo "amass is already installed"
-
+        echo "installing httprobe now"
+        go install github.com/tomnomnom/httprobe@latest
+        sudo cp $HOME/go/bin/httprobe /usr/local/bin
+        echo "httprobe has been installed"
+    else
+        echo "httprobe is already installed"
     fi
- if ! command -v gobuster &> /dev/null
+
+    # Check if amass installed or not
+    if ! command -v amass &> /dev/null
     then
-    echo "Installing gobuster now "
-    go install github.com/OJ/gobuster/v3@latest &> /dev/null
-
-    sudo cp $HOME/go/bin/gobuster /usr/local/bin
-    echo "GoBuster has been installed"
-
+        echo "Installing amass now"
+        go install -v github.com/OWASP/Amass/v3/...@master &> /dev/null
+        sudo cp $HOME/go/bin/amass /usr/local/bin
+        echo "amass has been installed"
     else
-    echo "Gobuster is already installed"
+        echo "amass is already installed"
+    fi
 
- fi
- if ! command -v nuclei &> /dev/null
- then
-    echo "Installing nuclei now "
-    go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest &> /dev/null
-    sudo cp $HOME/go/bin/nuclei /usr/local/bin
-    echo "nuclei installation is done"
-
+    # Check if gobuster installed or not
+    if ! command -v gobuster &> /dev/null
+    then
+        echo "Installing gobuster now"
+        go install github.com/OJ/gobuster/v3@latest &> /dev/null
+        sudo cp $HOME/go/bin/gobuster /usr/local/bin
+        echo "GoBuster has been installed"
     else
-       echo "nuclei is already installed"
+        echo "Gobuster is already installed"
+    fi
 
+    # Check if nuclei installed or not
+    if ! command -v nuclei &> /dev/null
+    then
+        echo "Installing nuclei now"
+        go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest &> /dev/null
+        sudo cp $HOME/go/bin/nuclei /usr/local/bin
+        echo "nuclei installation is done"
+    else
+        echo "nuclei is already installed"
+    fi
 
-   fi
-
- if ! command -v subfinder &> /dev/null
-then
-        echo "Installing subfinder now "
+    # Check if subfinder installed or not
+    if ! command -v subfinder &> /dev/null
+    then
+        echo "Installing subfinder now"
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest &> /dev/null
         sudo cp $HOME/go/bin/subfinder /usr/local/bin
-        echo "subfinder installation is done"  
-
+        echo "subfinder installation is done"
     else
-    echo "subfinder is already installed"
-fi
+        echo "subfinder is already installed"
+    fi
+
+    # Check if assetfinder is installed or not
     if ! command -v assetfinder &> /dev/null
-then
-
-        echo "installing assetfinder now "
+    then
+        echo "installing assetfinder now"
         go install github.com/tomnomnom/assetfinder@latest &> /dev/null
-        echo "assetfinder has been installed "
-
-     
-
+        echo "assetfinder has been installed"
     else
-        echo "assetfinder is installed"
+        echo "assetfinder is already installed"
+    fi
 
-
-fi
+    # Check if ffuf installed or not
     if ! command -v ffuf &> /dev/null
-then
-        echo "Installing ffuf now "
+    then
+        echo "Installing ffuf now"
         go install github.com/ffuf/ffuf@latest
         cp $HOME/go/bin/ffuf /usr/local/bin
-        echo "ffuf has been installed "
-
-
+        echo "ffuf has been installed"
     else
         echo "ffuf is already installed"
+    fi
 
-
-fi
-if ! command -v gf &> /dev/null
-then
-        echo "installing gf now "
+    # Check if gf installed or not
+    if ! command -v gf &> /dev/null
+    then
+        echo "installing gf now"
         go install github.com/tomnomnom/gf@latest &> /dev/null
         cp $HOME/go/bin/gf /usr/local/bin
         echo "gf has been installed"
     else
         echo "gf is already installed"
+    fi
 
-
-fi
- if ! command -v meg &> /dev/null
-then
-        echo "Instaliing meg now "
+    # Check if meg installed or not
+    if ! command -v meg &> /dev/null
+    then
+        echo "Instaliing meg now"
         go install github.com/tomnomnom/meg@latest &> /dev/null
         cp $HOME/go/bin/meg /usr/local/bin
         echo "meg has been installed"
-
-
     else
         echo "meg is already installed"
+    fi
 
-
-fi
-if ! command -v waybackurls &> /dev/null
-then
-        echo "installing waybackurls now "
+    # Check if waybackurls installed or not
+    if ! command -v waybackurls &> /dev/null
+    then
+        echo "installing waybackurls now"
         go install github.com/tomnomnom/waybackurls@latest &> /dev/null
         cp $HOME/go/bin/waybackurls /usr/local/bin
-        echo "waybackurls has been installed"
+	      echo "waybackurls has been installed"
 
     else
         echo "waybackurls is already installed"
