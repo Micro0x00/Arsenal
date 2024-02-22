@@ -306,7 +306,7 @@ then
 then
  
         echo "installing katana now "
-        go install github.com/projectdiscovery/katana/cmd/katana@latest &> /dev/null
+        go install github.com/projectdiscovery/katana/cmd/katana@latest 
         sudo cp $HOME/go/bin/katana /usr/local/bin
         echo "Katana has been installed"
         
