@@ -43,7 +43,7 @@ requirements(){
         export GOPATH=$HOME/go
         export PATH=$PATH:/usr/local/go/bin
         export PATH=$PATH:$GOPATH/bin
-        source /etc/profile #to update you shell dont worry
+        source /etc/profile #to update you shell don't worry
     else
         echo -e "${Cyan}Go is already installed and your version is: ${go_v:13}${END}"
     fi
