@@ -26,7 +26,7 @@ ${Red}
                                  
  "
 
-# creat a dir to your arsenal
+# create a dir to your arsenal
 mkdir Arsenal &> /dev/null
 cd Arsenal 
 requirements(){
@@ -38,8 +38,8 @@ requirements(){
         echo "installing go now "
         sudo apt remove -y golang-go &>/dev/null
         sudo rm -rf /usr/local/go &>/dev/null
-        wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz &>/dev/null
-        sudo tar -xvf go1.20.1.linux-amd64.tar.gz -C /usr/local/ &>/dev/null
+        wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz &>/dev/null
+        sudo tar -xvf go1.22.3.linux-amd64.tar.gz -C /usr/local/ &>/dev/null
         export GOPATH=$HOME/go
         export PATH=$PATH:/usr/local/go/bin
         export PATH=$PATH:$GOPATH/bin
